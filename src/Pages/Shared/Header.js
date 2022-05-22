@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "../../Pages/CssFile/AllCss.css";
 const Header = () => {
   const [hambarger, setHambarger] = useState(false);
