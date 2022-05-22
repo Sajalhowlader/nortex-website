@@ -1,7 +1,63 @@
 .nav_ber {
-    background: #070914;
-    color: white;
+  background: #070914;
+  color: white;
 }
-.container{
-    max-width: 1280px;
+.logo-menu-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0px;
+  align-items: center;
+}
+.menu-btn {
+  display: flex;
+  align-items: center;
+}
+.sing-in {
+  padding: 8px 28px;
+  background: #373a4a36;
+  margin-left: 80px;
+  border-radius: 4px;
+  font-weight: bold;
+  color: #3a57cd;
+}
+.menu-link {
+  margin-left: 16px;
+  font-weight: bold;
+}
+.hambarger {
+  display: none;
+}
+/* for responsive nav ber */
+@media screen and (max-width: 668px) {
+  .logo-menu-container {
+    flex-direction: column;
+  }
+  .mobile-btn {
+    flex-direction: column;
+    display: none;
+    transition: 4s;
+  }
+  .hambarger {
+    display: block;
+    margin-left: 100%;
+    margin-top: -2%;
+  }
+  .site-name {
+    margin-top: -40px;
+    margin-bottom: 20px;
+  }
+  .menu-ul {
+    display: flex;
+    flex-direction: column;
+  }
+  .sing-in {
+    margin-left: 0px;
+    margin-top: 12px;
+  }
+  .menu-link {
+    margin-left: 0px;
+  }
+  .menu-btn {
+    flex-direction: column;
+  }
 }
