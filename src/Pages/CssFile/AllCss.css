@@ -61,3 +61,12 @@
     flex-direction: column;
   }
 }
+
+/* Home img for carousel */
+.swiper_slider {
+  background: linear-gradient(#00000050, #00000050),
+    linear-gradient(#00000050, #00000050), url(../../images/banner-5.webp);
+  height: 90vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
