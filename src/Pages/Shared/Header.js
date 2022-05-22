@@ -47,9 +47,9 @@ const Header = () => {
             </div>
 
             <div>
-              <button className="sing-in">
-                <Link to="/singIn">SING IN</Link>
-              </button>
+              <Link to="/singIn">
+                <button className="sing-in">SING IN</button>
+              </Link>
             </div>
           </div>
         </div>

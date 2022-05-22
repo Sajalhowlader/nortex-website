@@ -4,7 +4,7 @@ import Header from "./Pages/Shared/Header";
 import { openRoutes } from "./Pages/Routes/OpenRoutes";
 function App() {
   return (
-    <div className="App">
+    <div className="styles">
       <Header />
       <Routes>
         {openRoutes.map(({ path, Component }, index) => (
