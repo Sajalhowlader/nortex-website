@@ -22,8 +22,8 @@ const SingIn = () => {
         <div className="logSingInForm">
           <div className="new-here">
             <h2>New To Here? </h2>
-            <p>If you are new to here?Sing in first</p>
-            <input className="btn-2" type="submit" value="SING UP" />
+            <p>If you are new to here?Sing up first.</p>
+            <button className="btn-2">SING UP</button>
           </div>
           <form onSubmit={handleSubmit(onSubmit)}>
             <h2 className="singInTitle">Sing in</h2>

@@ -200,11 +200,18 @@ form {
   font-size: 29px;
   color: whitesmoke;
 }
-.new-here input {
-  padding: 6px 26px;
+.btn-2 {
+  padding: 7px 30px;
   font-weight: 600;
   color: whitesmoke;
   border: 2px solid white;
   border-radius: 20px;
   margin-top: 15px;
+}
+.new-here p {
+  font-size: 17px;
+  font-weight: 500;
+  color: whitesmoke;
+  letter-spacing: 2px;
+  text-transform: capitalize;
 }
