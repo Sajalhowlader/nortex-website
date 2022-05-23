@@ -5,6 +5,9 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+img {
+  width: 100%;
+}
 body {
   font-family: "Poppins", sans-serif;
 }
