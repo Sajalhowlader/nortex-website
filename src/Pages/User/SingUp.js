@@ -1,5 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import svgOne from "../../images/svg/undraw_voice_control_ofo1.svg";
+import auth from "../../firebaseCredential";
 import {
   FaFacebook,
   FaGithub,
@@ -9,7 +12,7 @@ import {
   FaUserCircle,
 } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import svgOne from "../../images/svg/undraw_voice_control_ofo1.svg";
+import { useUpdateProfile } from "react-firebase-hooks/auth";
 const SingUp = () => {
   const navigate = useNavigate();
   const {
@@ -18,8 +21,19 @@ const SingUp = () => {
     handleSubmit,
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const [createUser, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth);
+  const [updateProfile, updating, namError] = useUpdateProfile(auth);
 
+  const onSubmit = async (data) => {
+    const { email, password, name } = data;
+    await createUser(email, password);
+    await updateProfile({ displayName: name });
+  };
+
+  if (user) {
+    console.log(user);
+  }
   const handleSingIn = () => {
     navigate("/singIn");
   };

@@ -1,8 +1,16 @@
+import { signOut } from "firebase/auth";
 import React, { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, NavLink } from "react-router-dom";
+import auth from "../../firebaseCredential";
 import "../../Pages/CssFile/AllCss.css";
 const Header = () => {
+  const [user] = useAuthState(auth);
   const [hambarger, setHambarger] = useState(false);
+
+  const handleSingOut = () => {
+    signOut(auth);
+  };
   return (
     <nav className="nav_ber">
       <div className="container mx-auto px-8">
@@ -48,7 +56,13 @@ const Header = () => {
 
             <div>
               <Link to="/singIn">
-                <button className="sing-in">SING IN</button>
+                {user ? (
+                  <button onClick={handleSingOut} className="sing-in">
+                    SING OUT
+                  </button>
+                ) : (
+                  <button className="sing-in">SING IN</button>
+                )}
               </Link>
             </div>
           </div>

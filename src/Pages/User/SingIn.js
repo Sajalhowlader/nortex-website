@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import "../../Pages/CssFile/AllCss.css";
 import svgOne from "../../images/svg/undraw_maker_launch_re_rq81 (1).svg";
+import auth from "../../firebaseCredential";
 import {
   FaFacebook,
   FaGithub,
@@ -10,6 +11,10 @@ import {
   FaUserCircle,
 } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import {
+  useSignInWithEmailAndPassword,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
 
 const SingIn = () => {
   const navigate = useNavigate();
@@ -18,10 +23,23 @@ const SingIn = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+
+  const [singInUser, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+  const onSubmit = (data) => {
+    const { email, password } = data;
+    singInUser(email, password);
+  };
+  const handleGoogleSingIn = () => {
+    signInWithGoogle();
+  };
   const handleSingUp = () => {
     navigate("/singUp");
   };
+  if (user) {
+    navigate("/");
+  }
   return (
     <div className="singIn-container">
       <div className="forms-container">
@@ -78,7 +96,10 @@ const SingIn = () => {
             <input className="sing-up-btn" value="SING IN" type="submit" />
             <div class="divider">OR</div>
             <div className="social_container">
-              <FaGoogle className="socialMediaIcon" />
+              <FaGoogle
+                className="socialMediaIcon"
+                onClick={handleGoogleSingIn}
+              />
               <FaFacebook className="socialMediaIcon" />
               <FaGithub className="socialMediaIcon" />
             </div>
