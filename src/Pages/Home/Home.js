@@ -1,5 +1,6 @@
 import React from "react";
 import homeImg from "../../images/banner-1-removebg-preview.png";
+import Tooles from "./Tooles";
 const Home = () => {
   return (
     <>
@@ -18,6 +19,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <Tooles />
     </>
   );
 };
