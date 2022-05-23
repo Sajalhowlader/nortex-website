@@ -4,6 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, NavLink } from "react-router-dom";
 import auth from "../../firebaseCredential";
 import "../../Pages/CssFile/AllCss.css";
+import blank from "../../images/svg/blank.webp";
 const Header = () => {
   const [user] = useAuthState(auth);
   const [hambarger, setHambarger] = useState(false);
@@ -57,11 +58,25 @@ const Header = () => {
             <div>
               <Link to="/singIn">
                 {user ? (
-                  <button onClick={handleSingOut} className="sing-in">
-                    SING OUT
-                  </button>
+                  <>
+                    <img
+                      class="w-10 rounded-full avatar online ring ring-primary ring-offset-base-100  avater-img"
+                      src={user.photoURL}
+                      alt=""
+                    />
+                    <button onClick={handleSingOut} className="sing-in">
+                      SING OUT
+                    </button>
+                  </>
                 ) : (
-                  <button className="sing-in">SING IN</button>
+                  <>
+                    <img
+                      class="w-10 rounded-full avatar online ring ring-primary ring-offset-base-100  avater-img"
+                      src={blank}
+                      alt=""
+                    />
+                    <button className="sing-in">SING IN</button>
+                  </>
                 )}
               </Link>
             </div>
