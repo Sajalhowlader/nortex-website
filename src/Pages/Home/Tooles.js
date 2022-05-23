@@ -17,7 +17,7 @@ const Tooles = () => {
           <h1>TOOLS</h1>
         </div>
         <div className="allTooles">
-          {tools.map((tool) => (
+          {tools.slice(0, 6).map((tool) => (
             <ShowTools key={tool._id} tool={tool} />
           ))}
         </div>

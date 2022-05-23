@@ -9,14 +9,15 @@ const ShowTools = ({ tool }) => {
           <img src={img} alt="" />
         </div>
         <div className="card-info">
-          <h2>Name:{name}</h2>
-          <div>
-            <p>Min Order:{minOrder}</p>
-            <p>Available:{available}</p>
+          <h2>{name}</h2>
+          <div className="order-able">
+            <p>Min Order: {minOrder}</p>
+            <p>Available: {available}</p>
           </div>
-          <p>Price{price}</p>
+          <p className="price">Price: ${price}</p>
+          <p className="dis">Description:{dis.slice(0, 70) + "..."}</p>
+          <button className="care-btn">purchase</button>
         </div>
-        <p>Description:{dis}</p>
       </div>
     </>
   );

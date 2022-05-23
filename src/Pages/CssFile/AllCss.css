@@ -126,8 +126,10 @@
   display: inline-block;
 }
 .tools-card {
-  border: 1px solid red;
+  border: 3px solid rgb(212, 210, 210);
   width: 385px;
+  border-radius: 15px;
+  overflow: hidden;
 }
 
 .allTooles {
@@ -138,6 +140,63 @@
 .card-img img {
   height: 265px;
   object-fit: cover;
+}
+.card-info {
+  color: white;
+  background: #0e0e21;
+  padding: 12px;
+}
+
+.card-info h2 {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.order-able {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  padding: 12px 0px;
+}
+
+.order-able p {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.order-able {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  padding: 12px 0px;
+}
+
+.order-able p {
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.price {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  font-family: inherit;
+  color: #9686df;
+}
+
+.dis {
+  font-weight: 500;
+  margin: 10px 0px;
+}
+.care-btn {
+  background: #ff084b;
+  padding: 6px 12px;
+  border-radius: 8px; /* justify-content: center; */
+  display: flex;
+  margin: 0 auto;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 /* sing in form all styles */
 
