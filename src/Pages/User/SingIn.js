@@ -12,16 +12,16 @@ import {
 import { useNavigate } from "react-router-dom";
 
 const SingIn = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
   const onSubmit = (data) => console.log(data);
-const handleSingUp = ()=>{
-  navigate('/singUp')
-}
+  const handleSingUp = () => {
+    navigate("/singUp");
+  };
   return (
     <div className="singIn-container">
       <div className="forms-container">
@@ -29,12 +29,14 @@ const handleSingUp = ()=>{
           <div className="new-here">
             <h2>New To Here? </h2>
             <p>If you are new to here?Sing up first.</p>
-            <button onClick={handleSingUp} className="btn-2">SING UP</button>
+            <button onClick={handleSingUp} className="btn-2">
+              SING UP
+            </button>
           </div>
           <div className="singIn-img">
             <img src={svgOne} alt="" />
           </div>
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form className="inputFrom" onSubmit={handleSubmit(onSubmit)}>
             <h2 className="singInTitle">Sing in</h2>
             <div className="inputField">
               <FaUserCircle className="input-icon" />
