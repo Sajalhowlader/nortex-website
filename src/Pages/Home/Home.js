@@ -1,21 +1,20 @@
 import React from "react";
-
+import homeImg from "../../images/banner-1-removebg-preview.png";
 const Home = () => {
   return (
     <>
       <section className="home-background">
-        <div class="hero ">
-          <div class="hero-content flex-col lg:flex-row">
-            <img src="" alt="" />
-            <div>
-              <h1 class="text-5xl font-bold">Box Office News!</h1>
-              <p class="py-6">
-                Provident cupiditate voluptatem et in. Quaerat fugiat ut
-                assumenda excepturi exercitationem quasi. In deleniti eaque aut
-                repudiandae et a id nisi.
-              </p>
-              <button class="btn btn-primary">Get Started</button>
-            </div>
+        <div className="home-container">
+          <div className="home-img">
+            <img src={homeImg} alt="" />
+          </div>
+          <div className="content">
+            <h2>
+              <span className="title-first">N</span>
+              <span className="title-second">ORTEX</span>
+              <br />
+              <p> Make Your Day Easy</p>
+            </h2>
           </div>
         </div>
       </section>

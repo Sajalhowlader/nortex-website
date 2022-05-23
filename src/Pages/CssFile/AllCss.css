@@ -76,8 +76,38 @@
   height: 90vh;
   background-repeat: no-repeat;
   background-size: cover;
+  height: 87vh;
+  min-height: 500px;
 }
-
+.home-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 100px;
+  height: 500px;
+}
+.title-first {
+  font-size: 150px;
+  font-family: system-ui;
+  font-weight: bold;
+  color: #d1132e;
+}
+.title-second {
+  font-size: 60px;
+  color: white;
+  font-family: inherit;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 20px;
+}
+.content p {
+  font-size: 45px;
+  color: #7f87f0;
+  font-family: inherit;
+  font-weight: 600;
+  font-style: italic;
+  margin-top: -30px;
+}
 /* sing in form all styles */
 
 .singIn-container {
