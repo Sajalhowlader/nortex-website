@@ -41,24 +41,39 @@ const SingIn = () => {
             <div className="inputField">
               <FaUserCircle className="input-icon" />
               <input
-                type="text"
+                type="email"
                 placeholder="Email"
-                {...register("Name", { required: true })}
+                {...register("email", {
+                  required: {
+                    value: true,
+                  },
+                })}
               />
             </div>
-            {errors.firstName?.type === "required" &&
-              "First   name is required"}
+            {errors.email?.type === "required" && (
+              <strong className="text-red-500 font-bold">
+                Please!Enter Your Email
+              </strong>
+            )}
 
             <div className="inputField">
               <FaLock className="input-icon" />
               <input
                 type="password"
                 placeholder="Password"
-                {...register("Password", { pattern: /^[A-Za-z]+$/i })}
+                {...register("password", {
+                  required: {
+                    value: true,
+                  },
+                })}
               />
             </div>
 
-            {errors.lastName && "Last name is required"}
+            {errors.password?.type === "required" && (
+              <strong className="text-red-500 font-bold">
+                Please!Enter Your Password
+              </strong>
+            )}
 
             <input className="sing-up-btn" value="SING IN" type="submit" />
             <div class="divider">OR</div>
