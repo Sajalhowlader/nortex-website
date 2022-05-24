@@ -406,3 +406,9 @@
   width: 35%;
   margin-left: 20%;
 }
+/* Footer */
+.footer-bg {
+  background: #020713;
+  color: white;
+  font-weight: bold;
+}
