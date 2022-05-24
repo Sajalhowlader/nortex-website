@@ -1,5 +1,5 @@
 import React from "react";
-import { FaUserFriends } from "react-icons/fa";
+import { FaChartLine, FaGrinStars, FaUserFriends } from "react-icons/fa";
 const Summary = () => {
   return (
     <section>
@@ -15,27 +15,39 @@ const Summary = () => {
                   <FaUserFriends />
                 </div>
                 <div className="details">
-                  <h1>We served 1000+ customers</h1>
+                  <h1>
+                    <span> 1000 +</span>
+                    <br />
+                    <p className="countInfo">Happy Customers</p>
+                  </h1>
                 </div>
               </div>
             </div>
             <div className="info_container">
               <div className="business-info">
                 <div className="icon">
-                  <FaUserFriends />
+                  <FaChartLine />
                 </div>
                 <div className="details">
-                  <h1>We served 1000+ customers</h1>
+                  <h1>
+                    <span> 150M +</span>
+                    <br />
+                    <p className="countInfo">Annual revenue</p>
+                  </h1>
                 </div>
               </div>
             </div>
             <div className="info_container">
               <div className="business-info">
                 <div className="icon">
-                  <FaUserFriends />
+                  <FaGrinStars />
                 </div>
                 <div className="details">
-                  <h1>We served 1000+ customers</h1>
+                  <h1>
+                    <span> 35K +</span>
+                    <br />
+                    <p className="countInfo"> Reviews</p>
+                  </h1>
                 </div>
               </div>
             </div>
