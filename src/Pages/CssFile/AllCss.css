@@ -131,9 +131,8 @@
 .tools-card {
   width: 385px;
   border-radius: 13px;
-  background: #f2f2f2;
-  box-shadow: 5px 7px 17px 1px #8d8d939c;
   overflow: hidden;
+  box-shadow: 5px 7px 17px 0px #727171;
 }
 
 .allTooles {
@@ -141,20 +140,29 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 45px;
 }
+.card-img {
+  background: linear-gradient(50deg, #000000, #07053b);
+  padding: 15px 0px;
+}
 .card-img img {
   height: 265px;
   object-fit: cover;
+  width: 265px;
+  border-radius: 50%;
+  margin: 0 auto;
 }
 .card-info {
-  color: white;
-  background: #0e0e21;
+  color: black;
   padding: 12px;
+  background: #f7f7f7;
 }
 
 .card-info h2 {
   text-align: center;
-  font-size: 22px;
   font-weight: bold;
+  text-transform: uppercase;
+  font-size: 25px;
+  color: #0c0c0c;
 }
 
 .order-able {
@@ -201,6 +209,7 @@
   margin: 0 auto;
   text-transform: uppercase;
   font-weight: bold;
+  color: white;
 }
 /* Business summary section */
 .bg-summary {

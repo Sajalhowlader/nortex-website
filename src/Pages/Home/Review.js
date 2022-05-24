@@ -63,7 +63,7 @@ const Review = () => {
                 <img src={cusThree} alt="" />
               </div>
             </div>
-            <h2 className="cs-name">LINDA</h2>
+            <h2 className="cs-name">NANCY</h2>
             <p className="flex justify-center text-[#e90e3d] ">
               <FaStar className="mx-1" />
               <FaStar className="mx-1" />
@@ -82,10 +82,10 @@ const Review = () => {
           <div className="reviewer-info">
             <div class="avatar">
               <div class="w-36 rounded-full ring ring-white ring-offset-base-100 ">
-                <img src={cusOne} alt="" />
+                <img src={cusFour} alt="" />
               </div>
             </div>
-            <h2 className="cs-name">LINDA</h2>
+            <h2 className="cs-name">MICHLE</h2>
             <p className="flex justify-center text-[#e90e3d] ">
               <FaStar className="mx-1" />
               <FaStar className="mx-1" />
