@@ -249,15 +249,29 @@
   font-style: italic;
 }
 /* Review section styles */
+.cs-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
 .review-sec {
   background: #f7f3f3;
 }
+.cs-revies {
+  font-weight: 500;
+  color: #444;
+  padding: 15px 0px;
+}
 
+.cs-name {
+  font-weight: bold;
+  font-size: 30px;
+}
 .review-container {
   background: white;
   width: 300px;
   border-radius: 10px;
   overflow: hidden;
+  box-shadow: 5px 1px 12px 8px #e1e0e0;
 }
 
 .color {
@@ -268,7 +282,8 @@
 
 .reviewer-info {
   text-align: center;
-  margin-top: -96px;
+  margin-top: -110px;
+  padding: 0px 12px;
 }
 /* sing in form all styles */
 
