@@ -1,5 +1,6 @@
 import React from "react";
 import homeImg from "../../images/banner-1-removebg-preview.png";
+import Contacts from "./Contacts";
 import Partner from "./Partner";
 import Review from "./Review";
 import Summary from "./Summary";
@@ -26,6 +27,7 @@ const Home = () => {
       <Summary />
       <Review />
       <Partner />
+      <Contacts />
     </>
   );
 };

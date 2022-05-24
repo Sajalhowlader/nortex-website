@@ -294,6 +294,47 @@
   margin-top: -110px;
   padding: 0px 12px;
 }
+/* Partner Section */
+.p-title {
+  color: #ff0039;
+}
+.ps-co {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+.partner-sec {
+  background: #02010e;
+}
+.pa-img {
+  width: 220px;
+  background: #eceaea;
+  border-radius: 15px;
+}
+
+.pa-img img {
+  height: 140px;
+  object-fit: contain;
+}
+/* Contact us styles */
+
+.c-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+.c-info {
+  border: 2px solid #f20848;
+  margin: 11px 81px;
+  width: 350px;
+  padding: 10px;
+  outline: none;
+  border-radius: 4px;
+}
+
+.c-img img {
+  height: 320px;
+  object-fit: cover;
+}
 /* sing in form all styles */
 
 .singIn-container {
