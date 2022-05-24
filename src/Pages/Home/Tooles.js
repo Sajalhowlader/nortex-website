@@ -13,7 +13,7 @@ const Tooles = () => {
   return (
     <>
       <section className="container mx-auto">
-        <div className="tools">
+        <div className="title">
           <h1>TOOLS</h1>
         </div>
         <div className="allTooles">
