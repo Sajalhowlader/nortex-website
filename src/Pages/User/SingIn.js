@@ -10,14 +10,18 @@ import {
   FaLock,
   FaUserCircle,
 } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import {
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
+import PreLoader from "../Shared/PreLoader";
 
 const SingIn = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
+  let errorMessage;
   const {
     register,
     formState: { errors },
@@ -37,8 +41,18 @@ const SingIn = () => {
   const handleSingUp = () => {
     navigate("/singUp");
   };
-  if (user) {
-    navigate("/");
+  if (loading || gLoading) {
+    return <PreLoader />;
+  }
+  if (user || gUser) {
+    navigate(from, { replace: true });
+  }
+  if (gError || error) {
+    errorMessage = (
+      <p className="font-bold text-red-500">
+        {error?.message || gError?.message}
+      </p>
+    );
   }
   return (
     <div className="singIn-container">
@@ -94,6 +108,7 @@ const SingIn = () => {
             )}
 
             <input className="sing-up-btn" value="SING IN" type="submit" />
+            {errorMessage}
             <div class="divider">OR</div>
             <div className="social_container">
               <FaGoogle

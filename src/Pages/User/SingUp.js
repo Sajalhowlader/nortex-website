@@ -1,4 +1,3 @@
-import React from "react";
 import { useForm } from "react-hook-form";
 import {
   useCreateUserWithEmailAndPassword,
@@ -16,19 +15,21 @@ import {
 } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useUpdateProfile } from "react-firebase-hooks/auth";
+import { toast } from "react-toastify";
+import PreLoader from "../Shared/PreLoader";
 const SingUp = () => {
   const navigate = useNavigate();
+
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
-
+  let errorMessage;
   const [createUser, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-  const [updateProfile, updating, namError] = useUpdateProfile(auth);
-
+  const [updateProfile, updating] = useUpdateProfile(auth);
   const onSubmit = async (data) => {
     const { email, password, name } = data;
     await createUser(email, password);
@@ -41,8 +42,22 @@ const SingUp = () => {
   const handleGoogleSingIn = () => {
     signInWithGoogle();
   };
+  if (loading || gLoading) {
+    return <PreLoader />;
+  }
   if (user || gUser) {
     navigate("/singIn");
+    toast.success("Sing Up Successfully");
+  }
+  if (updating) {
+    toast.success("Successfully Update Name");
+  }
+  if (gError || error) {
+    errorMessage = (
+      <p className="font-bold text-red-500">
+        {error?.message || gError?.message}
+      </p>
+    );
   }
   return (
     <div>
@@ -131,6 +146,7 @@ const SingUp = () => {
                 </strong>
               )}
               <input className="sing-up-btn" value="SING UP" type="submit" />
+              {errorMessage}
               <div class="divider">OR</div>
               <div className="social_container">
                 <FaGoogle
