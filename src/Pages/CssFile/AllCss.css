@@ -349,7 +349,25 @@
   justify-content: center;
 }
 /* Book now style in one item */
+.order-section {
+  background: #ececec;
+  padding-top: 0;
+}
+.user-info {
+  display: flex;
+  align-items: center;
+}
 
+.user-container {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 25px;
+}
+
+.user-info p {
+  font-weight: bold;
+  color: #201f1f;
+}
 .order-img {
   width: 468px;
   background: linear-gradient(60deg, #17154f, #85378c);
@@ -372,6 +390,7 @@
 .order-name {
   font-size: 28px;
   font-weight: bold;
+  margin-left: 80px;
 }
 
 .min-max {
