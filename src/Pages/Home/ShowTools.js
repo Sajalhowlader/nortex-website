@@ -8,7 +8,6 @@ const ShowTools = ({ tool }) => {
   const handlePurchase = (id) => {
     navigate(`/purchase/${id}`);
   };
-
   return (
     <>
       <div className="tools-card">

@@ -5,6 +5,7 @@ import { openRoutes } from "./Pages/Routes/OpenRoutes";
 import Footer from "./Pages/Shared/Footer";
 import Protected from "./Pages/Routes/Protected";
 import { closeRoutes } from "./Pages/Routes/CloseRoutes";
+
 function App() {
   return (
     <div className="styles">

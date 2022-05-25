@@ -337,6 +337,17 @@
 .care-2 {
   padding: 14px 35px;
 }
+/* Preloader style */
+.preloader img {
+  width: 180px;
+}
+
+.preloader {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 /* sing in form all styles */
 
 .singIn-container {
