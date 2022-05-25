@@ -1,6 +1,9 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useCreateUserWithEmailAndPassword,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
 import svgOne from "../../images/svg/undraw_voice_control_ofo1.svg";
 import auth from "../../firebaseCredential";
 import {
@@ -23,6 +26,7 @@ const SingUp = () => {
 
   const [createUser, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
+  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const [updateProfile, updating, namError] = useUpdateProfile(auth);
 
   const onSubmit = async (data) => {
@@ -31,12 +35,15 @@ const SingUp = () => {
     await updateProfile({ displayName: name });
   };
 
-  if (user) {
-    navigate("/singIn");
-  }
   const handleSingIn = () => {
     navigate("/singIn");
   };
+  const handleGoogleSingIn = () => {
+    signInWithGoogle();
+  };
+  if (user || gUser) {
+    navigate("/singIn");
+  }
   return (
     <div>
       <div className="singIn-container">
@@ -126,7 +133,10 @@ const SingUp = () => {
               <input className="sing-up-btn" value="SING UP" type="submit" />
               <div class="divider">OR</div>
               <div className="social_container">
-                <FaGoogle className="socialMediaIcon" />
+                <FaGoogle
+                  onClick={handleGoogleSingIn}
+                  className="socialMediaIcon"
+                />
                 <FaFacebook className="socialMediaIcon" />
                 <FaGithub className="socialMediaIcon" />
               </div>

@@ -27,7 +27,28 @@ const Purchase = () => {
     return <PreLoader />;
   }
   const onSubmit = (data) => {
-    console.log(data);
+    const { name, email, order, address, phone } = data;
+    const bookingInfo = {
+      name: name,
+      email: email,
+      order: order,
+      price: price,
+      address: address,
+      phone: phone,
+    };
+    fetch("http://localhost:5000/bookings", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(bookingInfo),
+    })
+      .then((res) => res.json)
+      .then((result) => {
+        if (result) {
+          alert("add successFully");
+        }
+      });
   };
   return (
     <section className="order-section">
@@ -57,6 +78,7 @@ const Purchase = () => {
                 {...register("name", { required: true })}
               />
             </div>
+
             <div className="book-field">
               <input
                 value={user.email}
@@ -71,8 +93,11 @@ const Purchase = () => {
                 {...register("phone", { required: true })}
               />
             </div>
-            {errors.firstName?.type === "required" && "First name is required"}
-
+            {errors.phone?.type === "required" && (
+              <strong className="text-red-500 font-bold">
+                This Field Is Required 😒
+              </strong>
+            )}
             <div className="book-field h-28">
               <input
                 type="text"
@@ -80,13 +105,18 @@ const Purchase = () => {
                 {...register("address", { required: true })}
               />
             </div>
-
+            {errors.address?.type === "required" && (
+              <strong className="text-red-500 font-bold">
+                This Field Is Required 😒
+              </strong>
+            )}
+            <p className="font-bold">Enter Your Quantity</p>
             <div className="book-field">
               <input
                 className="w-full"
                 type="number"
                 defaultValue={minOrder}
-                {...register("minOrder", {
+                {...register("order", {
                   required: {
                     value: true,
                   },
@@ -100,18 +130,18 @@ const Purchase = () => {
                 })}
               />
             </div>
-            {errors.minOrder?.type === "required" && (
+            {errors.order?.type === "required" && (
               <strong className="text-red-500 font-bold">
                 Value Is Required !
               </strong>
             )}
-            {errors.minOrder?.type === "min" && (
+            {errors.order?.type === "min" && (
               <strong className="text-red-500 font-bold">
                 Plz Enter Minimum Order 😊
               </strong>
             )}
 
-            {errors.minOrder?.type === "max" && (
+            {errors.order?.type === "max" && (
               <strong className="text-red-500 font-bold">
                 You Can't Buy More Than Available 😒
               </strong>
