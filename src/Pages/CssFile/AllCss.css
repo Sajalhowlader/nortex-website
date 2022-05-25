@@ -369,7 +369,31 @@
   border-radius: 50%;
   margin: 0 auto;
 }
+.order-name {
+  font-size: 28px;
+  font-weight: bold;
+}
 
+.min-max {
+  display: flex;
+  gap: 80px;
+  font-size: 22px;
+  font-weight: 500;
+  color: #ff00af;
+}
+
+.order-price {
+  font-size: 26px;
+  font-weight: bold;
+  margin-left: 122px;
+  padding: 10px 0px;
+}
+
+.order-info p {
+  text-align: justify;
+  font-weight: 500;
+  color: #444;
+}
 /* sing in form all styles */
 
 .singIn-container {
