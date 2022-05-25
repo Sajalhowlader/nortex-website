@@ -32,7 +32,7 @@ const SingUp = () => {
   };
 
   if (user) {
-    console.log(user);
+    navigate("/singIn");
   }
   const handleSingIn = () => {
     navigate("/singIn");

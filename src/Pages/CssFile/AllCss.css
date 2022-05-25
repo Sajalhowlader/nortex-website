@@ -351,7 +351,7 @@
 /* Book now style in one item */
 .order-section {
   background: #ececec;
-  padding-top: 0;
+  padding-top: 15px;
 }
 .user-info {
   display: flex;

@@ -59,22 +59,25 @@ const Header = () => {
               <Link to="/singIn">
                 {user ? (
                   <>
-                    <img
-                      class="w-10 rounded-full avatar online ring ring-primary ring-offset-base-100  avater-img"
-                      src={user.photoURL}
-                      alt=""
-                    />
+                    {user.photoURL ? (
+                      <img
+                        class="w-10 rounded-full avatar online ring ring-primary ring-offset-base-100  avater-img"
+                        src={user.photoURL}
+                        alt=""
+                      />
+                    ) : (
+                      <img
+                        class="w-10 rounded-full avatar online ring ring-primary ring-offset-base-100  avater-img"
+                        src={blank}
+                        alt=""
+                      />
+                    )}
                     <button onClick={handleSingOut} className="sing-in">
                       SING OUT
                     </button>
                   </>
                 ) : (
                   <>
-                    <img
-                      class="w-10 rounded-full avatar online ring ring-primary ring-offset-base-100  avater-img"
-                      src={blank}
-                      alt=""
-                    />
                     <button className="sing-in">SING IN</button>
                   </>
                 )}

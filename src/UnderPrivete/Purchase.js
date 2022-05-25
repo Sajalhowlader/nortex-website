@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
 import auth from "../firebaseCredential";
-
+import blank from "../images/svg/blank.webp";
+import PreLoader from "../Pages/Shared/PreLoader";
 const Purchase = () => {
-  const [user] = useAuthState(auth);
+  const [user, isLoading] = useAuthState(auth);
   const { purchaseId } = useParams();
   const [isReload, setIsReload] = useState(false);
   const [items, setItems] = useState({});
@@ -14,26 +15,26 @@ const Purchase = () => {
       .then((res) => res.json())
       .then((data) => setItems(data));
   }, [purchaseId]);
-  console.log(items);
   const { name, img, minOrder, dis, price, available } = items;
-
+  if (isLoading) {
+    return <PreLoader />;
+  }
   return (
     <section className="order-section">
-      <div className="title">
-        <h1>ORDER NOW</h1>
-      </div>
       <div className="user-container">
-        {
-          <div class="user-info">
+        <div class="user-info">
+          {user.photoURL ? (
             <div class=" avatar online">
-              <img className="w-24 rounded-full" src={user.photoURL} alt="" />{" "}
+              <img className="w-24 rounded-full" src={user.photoURL} alt="" />
             </div>
-            <div>
-              <p className="">{user.displayName}</p>
-              <p className="">{user.email}</p>
-            </div>
+          ) : (
+            <img className="w-24 rounded-full avatar" src={blank} alt="" />
+          )}
+          <div>
+            <p className="">{user.displayName}</p>
+            <p className="">{user.email}</p>
           </div>
-        }
+        </div>
       </div>
       <div className="mx-auto container order-container">
         <div className="order-img">
