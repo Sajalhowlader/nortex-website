@@ -4,8 +4,9 @@ import { useNavigate } from "react-router-dom";
 const ShowTools = ({ tool }) => {
   const { _id, name, img, dis, price, minOrder, available } = tool;
   const navigate = useNavigate();
+
   const handlePurchase = (id) => {
-    navigate(`purchase/${id}`);
+    navigate("/purchase");
   };
 
   return (
@@ -22,7 +23,7 @@ const ShowTools = ({ tool }) => {
           </div>
           <p className="price">Price: ${price}</p>
           <p className="dis">Description:{dis.slice(0, 70) + "..."}</p>
-          <button onClick={() => handlePurchase(_id)} className="care-btn">
+          <button onClick={handlePurchase} className="care-btn">
             purchase
           </button>
         </div>

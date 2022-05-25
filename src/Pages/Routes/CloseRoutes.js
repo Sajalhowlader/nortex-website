@@ -1,5 +1,3 @@
-import Home from "../Home/Home";
+import Purchase from "../../UnderPrivete/Purchase";
 
-export const closeRoute =[
-    { path: "/", Component: Home },
-]
+export const closeRoutes = [{ path: "purchase", Component: Purchase }];

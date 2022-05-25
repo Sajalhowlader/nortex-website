@@ -4,7 +4,7 @@ import Header from "./Pages/Shared/Header";
 import { openRoutes } from "./Pages/Routes/OpenRoutes";
 import Footer from "./Pages/Shared/Footer";
 import Protected from "./Pages/Routes/Protected";
-import { closeRoute } from "./Pages/Routes/CloseRoutes";
+import { closeRoutes } from "./Pages/Routes/CloseRoutes";
 function App() {
   return (
     <div className="styles">
@@ -13,10 +13,11 @@ function App() {
         {openRoutes.map(({ path, Component }, index) => (
           <Route key={index} path={path} element={<Component />}></Route>
         ))}
+
         <Route element={<Protected />}>
-          {closeRoute.map(({ path, Component }, index) => {
-            <Route key={index} path={path} element={Component} />;
-          })}
+          {closeRoutes.map(({ path, Component }, index) => (
+            <Route key={index} path={path} element={<Component />}></Route>
+          ))}
         </Route>
       </Routes>
       <Footer />
