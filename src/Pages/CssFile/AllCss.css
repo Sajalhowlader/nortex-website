@@ -349,6 +349,11 @@
   justify-content: center;
 }
 /* Book now style in one item */
+.order-info-container {
+  text-align: center;
+  width: 500px;
+  margin: 0 auto;
+}
 .order-section {
   background: #ececec;
   padding-top: 15px;
@@ -369,7 +374,7 @@
   color: #201f1f;
 }
 .order-img {
-  width: 468px;
+  width: 380px;
   background: linear-gradient(60deg, #17154f, #85378c);
   padding: 30px;
   border-radius: 50px;
@@ -382,19 +387,19 @@
 }
 
 .order-img img {
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   margin: 0 auto;
 }
 .order-name {
   font-size: 28px;
   font-weight: bold;
-  margin-left: 80px;
 }
 
 .min-max {
   display: flex;
+  justify-content: center;
   gap: 80px;
   font-size: 22px;
   font-weight: 500;
@@ -404,7 +409,6 @@
 .order-price {
   font-size: 26px;
   font-weight: bold;
-  margin-left: 122px;
   padding: 10px 0px;
 }
 

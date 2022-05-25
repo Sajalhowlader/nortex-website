@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import auth from "../firebaseCredential";
 import blank from "../images/svg/blank.webp";
 import PreLoader from "../Pages/Shared/PreLoader";
+import PlaceOrder from "./PlaceOrder";
 const Purchase = () => {
   const [user, isLoading] = useAuthState(auth);
   const { purchaseId } = useParams();
@@ -37,19 +38,23 @@ const Purchase = () => {
         </div>
       </div>
       <div className="mx-auto container order-container">
-        <div className="order-img">
-          <img src={img} alt="" />
-        </div>
-        <div className="order-info">
-          <h2 className="order-name">Name:{name}</h2>
-          <div className="min-max">
-            <h2>Min Order:{minOrder}</h2>
-            <h2>Available:{available}</h2>
+        <div className="order-info-container">
+          <div className="order-img">
+            <img src={img} alt="" />
           </div>
-          <h1 className="order-price">Price: ${price}</h1>
-          <p>About:{dis}</p>
+          <div className="order-info">
+            <h2 className="order-name">Name:{name}</h2>
+            <div className="min-max">
+              <h2>Min Order:{minOrder}</h2>
+              <h2>Available:{available}</h2>
+            </div>
+            <h1 className="order-price">Price: ${price}</h1>
+            <p>About:{dis}</p>
+          </div>
         </div>
+        <div className="place-order-container"></div>
       </div>
+      {/* <PlaceOrder /> */}
     </section>
   );
 };
