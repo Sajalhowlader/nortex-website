@@ -6,7 +6,7 @@ const ShowTools = ({ tool }) => {
   const navigate = useNavigate();
 
   const handlePurchase = (id) => {
-    navigate("/purchase");
+    navigate(`/purchase/${id}`);
   };
 
   return (
@@ -23,7 +23,7 @@ const ShowTools = ({ tool }) => {
           </div>
           <p className="price">Price: ${price}</p>
           <p className="dis">Description:{dis.slice(0, 70) + "..."}</p>
-          <button onClick={handlePurchase} className="care-btn">
+          <button onClick={() => handlePurchase(_id)} className="care-btn">
             purchase
           </button>
         </div>

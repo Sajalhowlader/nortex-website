@@ -1,6 +1,6 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Navigate, useLocation } from "react-router-dom";
+import { Navigate, Outlet, useLocation } from "react-router-dom";
 import auth from "../../firebaseCredential";
 
 const Protected = ({ children }) => {
@@ -10,7 +10,7 @@ const Protected = ({ children }) => {
     return <Navigate to="/singIn" state={{ from: location }} replace />;
   }
 
-  return ;
+  return <Outlet />;
 };
 
 export default Protected;
