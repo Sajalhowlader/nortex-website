@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import "../../Pages/CssFile/AllCss.css";
 import svgOne from "../../images/svg/undraw_maker_launch_re_rq81 (1).svg";
@@ -16,6 +16,7 @@ import {
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import PreLoader from "../Shared/PreLoader";
+import useToken from "../../hooks/useToken";
 
 const SingIn = () => {
   const navigate = useNavigate();
@@ -27,7 +28,6 @@ const SingIn = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
-
   const [singInUser, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -35,18 +35,26 @@ const SingIn = () => {
     const { email, password } = data;
     singInUser(email, password);
   };
+
+  const [token] = useToken(gUser || user);
+
   const handleGoogleSingIn = () => {
     signInWithGoogle();
   };
   const handleSingUp = () => {
     navigate("/singUp");
   };
+
+  useEffect(() => {
+    if (token) {
+      navigate(from, { replace: true });
+    }
+  }, [from, token, navigate]);
+
   if (loading || gLoading) {
     return <PreLoader />;
   }
-  if (user || gUser) {
-    navigate(from, { replace: true });
-  }
+
   if (gError || error) {
     errorMessage = (
       <p className="font-bold text-red-500">

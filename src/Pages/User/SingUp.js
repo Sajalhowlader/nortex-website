@@ -13,13 +13,16 @@ import {
   FaMailBulk,
   FaUserCircle,
 } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useUpdateProfile } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
 import PreLoader from "../Shared/PreLoader";
+import useToken from "../../hooks/useToken";
+import { useEffect } from "react";
 const SingUp = () => {
   const navigate = useNavigate();
-
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
   const {
     register,
     formState: { errors },
@@ -35,6 +38,7 @@ const SingUp = () => {
     await createUser(email, password);
     await updateProfile({ displayName: name });
   };
+  const [token] = useToken(gUser || user);
 
   const handleSingIn = () => {
     navigate("/singIn");
@@ -42,12 +46,14 @@ const SingUp = () => {
   const handleGoogleSingIn = () => {
     signInWithGoogle();
   };
+  useEffect(() => {
+    if (token) {
+      navigate(from, { replace: true });
+      toast.success("Sing Up Successfully");
+    }
+  }, [from, token, navigate]);
   if (loading || gLoading) {
     return <PreLoader />;
-  }
-  if (user || gUser) {
-    navigate("/singIn");
-    toast.success("Sing Up Successfully");
   }
   if (updating) {
     toast.success("Successfully Update Name");
