@@ -505,6 +505,10 @@
 }
 
 /* My profile style */
+.card-img p {
+  color: #7676ff;
+}
+
 .profile-card {
   margin: 0 auto;
   width: 40%;
