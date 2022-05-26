@@ -7,6 +7,9 @@ import Protected from "./Pages/Routes/Protected";
 import { closeRoutes } from "./Pages/Routes/CloseRoutes";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Dashboard from "./Pages/Dashboard/Dashboard";
+import MyOrder from "./Pages/Dashboard/MyOrder";
+import Feedback from "./Pages/Dashboard/Feedback";
 
 function App() {
   return (
@@ -21,6 +24,12 @@ function App() {
           {closeRoutes.map(({ path, Component }, index) => (
             <Route key={index} path={path} element={<Component />}></Route>
           ))}
+        </Route>
+        <Route element={<Protected />}>
+          <Route path="/dashboard" element={<Dashboard />}>
+            <Route path="myOrder" element={<MyOrder />} />
+            <Route path="review" element={<Feedback />} />
+          </Route>
         </Route>
       </Routes>
       <Footer />

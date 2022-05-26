@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
 import auth from "../firebaseCredential";
-// import blank from "../images/svg/blank.webp";
 import PreLoader from "../Pages/Shared/PreLoader";
 import { useForm } from "react-hook-form";
 
@@ -14,7 +13,6 @@ const Purchase = () => {
   } = useForm();
   const [user, isLoading] = useAuthState(auth);
   const { purchaseId } = useParams();
-  // const [isReload, setIsReload] = useState(false);
   const [items, setItems] = useState({});
   useEffect(() => {
     const url = `http://localhost:5000/tools/${purchaseId}`;
@@ -125,7 +123,6 @@ const Purchase = () => {
                   },
                   max: {
                     value: `${available}`,
-                    message: "error message", // JS only: <p>error message</p> TS only support string
                   },
                 })}
               />
