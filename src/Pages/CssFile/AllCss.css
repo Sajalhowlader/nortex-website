@@ -446,6 +446,10 @@
   color: #aaa;
   font-weight: 500;
 }
+.feedback{
+  display: flex;
+  margin: 0 auto;
+}
 /* sing in form all styles */
 
 .singIn-container {
