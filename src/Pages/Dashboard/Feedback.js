@@ -1,7 +1,9 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { FaStar } from "react-icons/fa";
 import { toast } from "react-toastify";
+import auth from "../../firebaseCredential";
 
 const Feedback = () => {
   const {
@@ -9,16 +11,22 @@ const Feedback = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
-
+  const [user] = useAuthState(auth)
   const onSubmit = (data) => {
     console.log(data);
-
+    const { star, review } = data;
+    const addReview = {
+      img: user.photoURL,
+      star: star,
+      review: review,
+      name: user.displayName,
+    };
     fetch("http://localhost:5000/addReview", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(),
+      body: JSON.stringify(addReview),
     })
       .then((res) => res.json)
       .then((result) => {
@@ -34,7 +42,7 @@ const Feedback = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col items-center">
           <textarea
-            {...register("message", {
+            {...register("review", {
               required: {
                 value: true,
               }
@@ -47,7 +55,7 @@ const Feedback = () => {
               className=" c-info "
               type="number"
               placeholder=" Your Retting within 1-5"
-              {...register("retting", {
+              {...register("star", {
                 required: {
                   value: true,
                 },
@@ -62,12 +70,12 @@ const Feedback = () => {
           </div>
 
 
-          {errors.retting?.type === "min" && (
+          {errors.star?.type === "min" && (
             <strong className="text-red-500 font-bold ">
               You Can Give Retting 1-5 😒
             </strong>
           )}
-          {errors.retting?.type === "max" && (
+          {errors.star?.type === "max" && (
             <strong className="text-red-500 font-bold ">
               You Can Give Retting 1-5 😒
             </strong>

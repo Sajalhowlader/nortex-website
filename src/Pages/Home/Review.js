@@ -25,11 +25,11 @@ const Review = () => {
                   <img src={review.img} alt="" />
                 </div>
               </div>
-              <h2 className="cs-name">{review.name}</h2>
+              <h2 className="cs-name uppercase">{review.name}</h2>
               <p className="flex justify-center text-[#e90e3d] ">
-              
-                {[...Array(review.star)].map(start =>{
-               return <FaStar className="mx-1" />
+
+                {[...Array(parseInt(review.star))].map(start => {
+                  return <FaStar className="mx-1" />
                 })}
               </p>
               <p className="cs-revies">{review.review}</p>
