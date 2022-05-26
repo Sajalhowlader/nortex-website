@@ -22,7 +22,7 @@ import { useEffect } from "react";
 const SingUp = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  let from = location.state?.from?.pathname || "/";
+
   const {
     register,
     formState: { errors },
@@ -46,18 +46,23 @@ const SingUp = () => {
   const handleGoogleSingIn = () => {
     signInWithGoogle();
   };
+  let from = location.state?.from?.pathname || "/";
   useEffect(() => {
     if (token) {
       navigate(from, { replace: true });
       toast.success("Sing Up Successfully");
     }
   }, [from, token, navigate]);
+
+  useEffect(() => {
+    if (updating) {
+      toast.success("Successfully Update Name");
+    }
+  }, [updating]);
   if (loading || gLoading) {
     return <PreLoader />;
   }
-  if (updating) {
-    toast.success("Successfully Update Name");
-  }
+
   if (gError || error) {
     errorMessage = (
       <p className="font-bold text-red-500">

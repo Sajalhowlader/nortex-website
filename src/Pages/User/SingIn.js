@@ -21,7 +21,7 @@ import useToken from "../../hooks/useToken";
 const SingIn = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  let from = location.state?.from?.pathname || "/";
+
   let errorMessage;
   const {
     register,
@@ -44,7 +44,7 @@ const SingIn = () => {
   const handleSingUp = () => {
     navigate("/singUp");
   };
-
+  let from = location.state?.from?.pathname || "/";
   useEffect(() => {
     if (token) {
       navigate(from, { replace: true });

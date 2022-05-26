@@ -34,7 +34,7 @@ const MyOrder = () => {
 
   return (
     <div>
-      <h1 className="text-center ">My Order</h1>
+      <h1 className="text-center font-bold text-2xl mb-8">My Order</h1>
       <div class="overflow-x-auto">
         <table class="table w-full">
           <thead>
@@ -42,9 +42,11 @@ const MyOrder = () => {
               <th>Pic</th>
               <th>Product Name</th>
               <th>Price</th>
-              <th>Order Quantity</th>
+              <th>Quantity</th>
               <th>User Name</th>
               <th>Email</th>
+              <th>Paid</th>
+              <th>Cancel</th>
             </tr>
           </thead>
           <tbody>
@@ -62,6 +64,12 @@ const MyOrder = () => {
                 <td>{booking.order}</td>
                 <td>{booking.username}</td>
                 <td>{booking.email}</td>
+                <td>
+                  <button class="btn btn-xs bg-green-500">Paid</button>
+                </td>
+                <td>
+                  <button class="btn btn-xs bg-red-500">Cancel</button>
+                </td>
               </tr>
             ))}
           </tbody>
