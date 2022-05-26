@@ -27,11 +27,10 @@ const Review = () => {
               </div>
               <h2 className="cs-name">{review.name}</h2>
               <p className="flex justify-center text-[#e90e3d] ">
-                <FaStar className="mx-1" />
-                <FaStar className="mx-1" />
-                <FaStar className="mx-1" />
-                <FaStar className="mx-1" />
-                <FaStar className="mx-1" />
+              
+                {[...Array(5)].map(start =>{
+               return <FaStar className="mx-1" />
+                })}
               </p>
               <p className="cs-revies">{review.review}</p>
             </div>
