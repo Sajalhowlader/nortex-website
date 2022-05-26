@@ -25,9 +25,11 @@ const Purchase = () => {
     return <PreLoader />;
   }
   const onSubmit = (data) => {
-    const { name, email, order, address, phone } = data;
+    const { username, email, order, address, phone } = data;
     const bookingInfo = {
+      img: img,
       name: name,
+      username: username,
       email: email,
       order: order,
       price: price,
@@ -73,7 +75,7 @@ const Purchase = () => {
             <div className="book-field">
               <input
                 value={user.displayName}
-                {...register("name", { required: true })}
+                {...register("username", { required: true })}
               />
             </div>
 

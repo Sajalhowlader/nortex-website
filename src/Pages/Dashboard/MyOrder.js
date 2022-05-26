@@ -11,9 +11,10 @@ const MyOrder = () => {
 
   useEffect(() => {
     if (user) {
-      fetch(`/myItems?userEmail=${user.email}`, {
+      fetch(`http://localhost:5000/myItems?userEmail=${user.email}`, {
         method: "GET",
         headers: {
+          "content-type": "application/json",
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
       })
@@ -26,14 +27,46 @@ const MyOrder = () => {
           return res.json();
         })
         .then((data) => {
-          console.log(data);
+          setBookings(data);
         });
     }
   }, [user, navigate]);
 
   return (
     <div>
-      <h1>My Order</h1>
+      <h1 className="text-center ">My Order</h1>
+      <div class="overflow-x-auto">
+        <table class="table w-full">
+          <thead>
+            <tr>
+              <th>Pic</th>
+              <th>Product Name</th>
+              <th>Price</th>
+              <th>Order Quantity</th>
+              <th>User Name</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            {bookings.map((booking) => (
+              <tr>
+                <th>
+                  <div class="avatar">
+                    <div class="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                      <img src={booking.img} alt="" />
+                    </div>
+                  </div>
+                </th>
+                <td>{booking.name}</td>
+                <td>{booking.price}</td>
+                <td>{booking.order}</td>
+                <td>{booking.username}</td>
+                <td>{booking.email}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
