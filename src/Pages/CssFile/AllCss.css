@@ -504,6 +504,23 @@
   margin: 0 auto;
 }
 
+/* My profile style */
+.profile-card {
+  margin: 0 auto;
+  width: 40%;
+}
+
+.profile-card img {
+  width: 30%;
+  height: 30%;
+}
+
+.profile-card p {
+  text-align: center;
+  font-weight: bold;
+  color: #494444;
+}
+
 /* sing in form all styles */
 
 .singIn-container {

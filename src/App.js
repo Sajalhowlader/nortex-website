@@ -10,6 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import MyOrder from "./Pages/Dashboard/MyOrder";
 import Feedback from "./Pages/Dashboard/Feedback";
+import MyProfile from "./Pages/Dashboard/MyProfile";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />}>
             <Route path="myOrder" element={<MyOrder />} />
             <Route path="review" element={<Feedback />} />
+            <Route path="myProfile" element={<MyProfile />} />
           </Route>
         </Route>
       </Routes>

@@ -17,6 +17,9 @@ const SideBar = ({ children }) => {
             <li>
               <NavLink to="/dashboard/review">Review</NavLink>
             </li>
+            <li>
+              <NavLink to="/dashboard/myProfile">My Profile</NavLink>
+            </li>
           </ul>
         </div>
       </div>
