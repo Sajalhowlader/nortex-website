@@ -51,6 +51,7 @@ const Purchase = () => {
       .then((result) => {
         if (result) {
           toast.success("Buy successFully");
+
         }
       });
   };

@@ -33,8 +33,8 @@ const Review = () => {
               <h2 className="cs-name uppercase">{review.name}</h2>
               <p className="flex justify-center text-[#e90e3d] ">
 
-                {[...Array(parseInt(review.star))].map(start => {
-                  return <FaStar className="mx-1" />
+                {[...Array(parseInt(review.star))].map((start, index) => {
+                  return <FaStar className="mx-1" key={index} />
                 })}
               </p>
               <p className="cs-revies">{review.review}</p>
