@@ -13,6 +13,7 @@ import Feedback from "./Pages/Dashboard/Feedback";
 import MyProfile from "./Pages/Dashboard/MyProfile";
 import Users from "./Pages/Dashboard/Users";
 import AdminProtected from "./Pages/Routes/AdminProtected";
+import AddProduct from "./Pages/Dashboard/AddProduct";
 
 function App() {
   return (
@@ -35,6 +36,8 @@ function App() {
             <Route path="myProfile" element={<MyProfile />} />
             <Route element={<AdminProtected />}>
               <Route path="users" element={<Users />} />
+              <Route path="addProduct" element={<AddProduct />} />
+              <Route path="manageProduct" element={<AddProduct />} />
             </Route>
           </Route>
         </Route>

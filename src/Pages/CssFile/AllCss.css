@@ -569,6 +569,14 @@
   margin-bottom: 8px;
 }
 
+/* Add Products */
+.add-product {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 40%;
+}
+
 /* sing in form all styles */
 
 .singIn-container {
