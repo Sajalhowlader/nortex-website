@@ -32,7 +32,7 @@ const ManageProduct = () => {
         }
     }
     return (
-        <section className=" bg-tools">
+        <section className=" bg-tools manage-tools">
             <div className="container mx-auto">
                 <div className="title">
                     <h1>ALL TOOLS</h1>

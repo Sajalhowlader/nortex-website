@@ -61,12 +61,13 @@ const Header = () => {
                 <NavLink className="menu-link" to="/">
                   HOME
                 </NavLink>
-                <NavLink className="menu-link" to="/">
-                  HOME
-                </NavLink>
                 <NavLink className="menu-link" to="/allProducts">
                   ALL PRODUCTS
                 </NavLink>
+                <NavLink className="menu-link" to="/blogs">
+                  BLOGS
+                </NavLink>
+
                 {user && (
                   <NavLink className="menu-link" to="/dashboard/myProfile">
                     DASHBOARD
