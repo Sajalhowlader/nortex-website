@@ -525,6 +525,50 @@
   color: #494444;
 }
 
+
+.card-img p {
+  color: #7676ff;
+}
+
+.showProfile {
+  display: block;
+}
+
+.profile-div {
+  display: none;
+}
+
+.myProfile {
+  min-height: 150vh;
+}
+
+.d-profile {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.profile-input {
+  border: 2px solid #ff0056;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  background: none;
+  padding: 6px 10px;
+  outline: none;
+}
+
+.showProfile label {
+  font-weight: bold;
+  color: #4e4343;
+  font-size: 15px;
+}
+
+.text-area {
+  border: 2px solid #ff0056;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
 /* sing in form all styles */
 
 .singIn-container {
