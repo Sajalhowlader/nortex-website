@@ -15,10 +15,14 @@ const SideBar = ({ children }) => {
               <NavLink to="/dashboard/myOrder">My Order</NavLink>
             </li>
             <li>
+
               <NavLink to="/dashboard/review">Review</NavLink>
             </li>
             <li>
               <NavLink to="/dashboard/myProfile">My Profile</NavLink>
+            </li>
+            <li>
+              <NavLink to="/dashboard/allUsers">All Users</NavLink>
             </li>
           </ul>
         </div>

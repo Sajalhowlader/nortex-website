@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebaseCredential";
 import blank from "../../images/svg/blank.webp";
+import { toast } from "react-toastify";
 const MyProfile = () => {
   const [user] = useAuthState(auth)
   const [edit, setEdit] = useState(false)
@@ -29,14 +30,18 @@ const MyProfile = () => {
         method: "PUT",
         headers: {
           'Content-type': 'application/json; charset=UTF-8',
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
         body: JSON.stringify(profileInfo),
       })
         .then((response) => response.json())
-        .then((json) => console.log(json));
+        .then((result) => {
+          if (result) {
+            toast.success("Update Successfully")
+          }
+        });
     }
   }
-
 
 
   return <div className="myProfile">
@@ -57,6 +62,8 @@ const MyProfile = () => {
         <h2>{user.displayName}</h2>
 
         <p className="">{user.email}</p>
+
+
         <div className={edit ? "showProfile" : "profile-div"}>
           <form onSubmit={handleProfileSubmit} className="d-profile" >
             <label >Your Education</label>
@@ -69,11 +76,18 @@ const MyProfile = () => {
             <input name="facebook" className="profile-input" type="text" placeholder="Your Facebook Link" />
             <label>Your Linkedin</label>
             <input name="Linkedin" className="profile-input" type="text" placeholder="Your Linkedin Link" />
-            <input
-              className="care-btn care-2  feedback mt-3"
-              type="submit"
-              value="UPDATE"
-            />
+            <div className="flex">
+              <input
+                className="care-btn care-2  feedback mt-3 cursor-pointer bg-green-600"
+                type="submit"
+                value="SAVE"
+              />
+              <input
+                className="care-btn care-2  feedback mt-3 cursor-pointer"
+                type="submit"
+                value="UPDATE"
+              />
+            </div>
           </form>
         </div>
       </div>
