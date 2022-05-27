@@ -11,7 +11,7 @@ import Dashboard from "./Pages/Dashboard/Dashboard";
 import MyOrder from "./Pages/Dashboard/MyOrder";
 import Feedback from "./Pages/Dashboard/Feedback";
 import MyProfile from "./Pages/Dashboard/MyProfile";
-import AllUsers from "./Pages/Dashboard/AllUsers";
+import Users from "./Pages/Dashboard/Users";
 
 function App() {
   return (
@@ -32,7 +32,7 @@ function App() {
             <Route path="myOrder" element={<MyOrder />} />
             <Route path="review" element={<Feedback />} />
             <Route path="myProfile" element={<MyProfile />} />
-            <Route path="myProfile" element={<AllUsers />} />
+            <Route path="myProfile" element={<Users />} />
           </Route>
         </Route>
       </Routes>
