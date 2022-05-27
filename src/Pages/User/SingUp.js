@@ -158,7 +158,7 @@ const SingUp = () => {
               )}
               <input className="sing-up-btn" value="SING UP" type="submit" />
               {errorMessage}
-              <div class="divider">OR</div>
+              <div className="divider">OR</div>
               <div className="social_container">
                 <FaGoogle
                   onClick={handleGoogleSingIn}

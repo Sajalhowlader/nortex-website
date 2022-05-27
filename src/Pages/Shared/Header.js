@@ -17,37 +17,37 @@ const Header = () => {
       <div className="container mx-auto px-8">
         <div className="logo-menu-container">
           <label
-            for="my-drawer-2"
-            class="btn btn-square btn-ghost lg:hidden hambarger ham-2"
+            htmlFor="my-drawer-2"
+            className="btn btn-square btn-ghost lg:hidden hambarger ham-2"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              class="inline-block w-5 h-5 stroke-current"
+              className="inline-block w-5 h-5 stroke-current"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M4 6h16M4 12h16M4 18h16"
               ></path>
             </svg>
           </label>
           <button
             onClick={() => setHambarger(!hambarger)}
-            class="btn btn-square btn-ghost hambarger"
+            className="btn btn-square btn-ghost hambarger"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              class="inline-block w-5 h-5 stroke-current"
+              className="inline-block w-5 h-5 stroke-current"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M4 6h16M4 12h16M4 18h16"
               ></path>
             </svg>
@@ -85,13 +85,13 @@ const Header = () => {
                   <>
                     {user.photoURL ? (
                       <img
-                        class="w-10 rounded-full avatar online ring ring-primary ring-offset-base-100  avater-img"
+                        className="w-10 rounded-full avatar online ring ring-primary ring-offset-base-100  avater-img"
                         src={user.photoURL}
                         alt=""
                       />
                     ) : (
                       <img
-                        class="w-10 rounded-full avatar online ring ring-primary ring-offset-base-100  avater-img"
+                        className="w-10 rounded-full avatar online ring ring-primary ring-offset-base-100  avater-img"
                         src={blank}
                         alt=""
                       />
@@ -110,7 +110,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-    </nav>
+    </nav >
   );
 };
 

@@ -4,7 +4,12 @@ import { useQuery } from "react-query";
 import PreLoader from "../Shared/PreLoader";
 const Review = () => {
   const { data: reviews, isLoading } = useQuery("reviews", () =>
-    fetch("http://localhost:5000/reviews").then((res) => res.json())
+    fetch("http://localhost:5000/reviews", {
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem('accessToken')}`
+      }
+    }).then((res) => res.json())
   );
 
   if (isLoading) {
@@ -20,8 +25,8 @@ const Review = () => {
           <div className="review-container">
             <div className="color"></div>
             <div className="reviewer-info">
-              <div class="avatar">
-                <div class="w-36 rounded-full ring ring-white ring-offset-base-100 ">
+              <div className="avatar">
+                <div className="w-36 rounded-full ring ring-white ring-offset-base-100 ">
                   <img src={review.img} alt="" />
                 </div>
               </div>

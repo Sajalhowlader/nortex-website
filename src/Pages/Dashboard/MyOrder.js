@@ -35,8 +35,8 @@ const MyOrder = () => {
   return (
     <div>
       <h1 className="text-center font-bold text-2xl mb-8">My Order</h1>
-      <div class="overflow-x-auto">
-        <table class="table w-full">
+      <div className="overflow-x-auto">
+        <table className="table w-full">
           <thead>
             <tr>
               <th>Pic</th>
@@ -53,8 +53,8 @@ const MyOrder = () => {
             {bookings.map((booking) => (
               <tr>
                 <th>
-                  <div class="avatar">
-                    <div class="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                  <div className="avatar">
+                    <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                       <img src={booking.img} alt="" />
                     </div>
                   </div>
@@ -65,10 +65,10 @@ const MyOrder = () => {
                 <td>{booking.username}</td>
                 <td>{booking.email}</td>
                 <td>
-                  <button class="btn btn-xs bg-green-500">Paid</button>
+                  <button className="btn btn-xs bg-green-500">Paid</button>
                 </td>
                 <td>
-                  <button class="btn btn-xs bg-red-500">Cancel</button>
+                  <button className="btn btn-xs bg-red-500">Cancel</button>
                 </td>
               </tr>
             ))}

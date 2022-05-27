@@ -19,7 +19,7 @@ const UsersTable = ({ info, index }) => {
             <td>{index + 1}</td>
             <td>{info.email}</td>
             <td>
-                <button class="btn btn-xs bg-green-500">Make Admin</button>
+                <button className="btn btn-xs bg-green-500">Make Admin</button>
             </td>
 
         </tr>

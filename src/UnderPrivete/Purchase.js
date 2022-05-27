@@ -43,6 +43,7 @@ const Purchase = () => {
       method: "POST",
       headers: {
         "content-type": "application/json",
+        'authorization': `Bearer ${localStorage.getItem('accessToken')}`
       },
       body: JSON.stringify(bookingInfo),
     })

@@ -5,8 +5,8 @@ const PortFolio = () => {
         <div className="review-container profile-container">
             <div className="color profile-color"></div>
             <div className="reviewer-info profile-info">
-                <div class="avatar">
-                    <div class="w-64 rounded-full ring ring-white ring-offset-base-100 ">
+                <div className="avatar">
+                    <div className="w-64 rounded-full ring ring-white ring-offset-base-100 ">
                         <img src={profile} alt="" />
                     </div>
                 </div>
@@ -18,8 +18,8 @@ const PortFolio = () => {
                 <p className='text-center text-3xl font-bold text-blue-700 my-8'>EDUCATION</p>
 
 
-                <div class="overflow-x-auto">
-                    <table class="table w-full">
+                <div className="overflow-x-auto">
+                    <table className="table w-full">
 
                         <thead>
                             <tr>
@@ -40,7 +40,7 @@ const PortFolio = () => {
                                 <td>4.68 out of 5.00</td>
                             </tr>
 
-                            <tr class="hover">
+                            <tr className="hover">
                                 <th>2</th>
                                 <td>Agriculture College Barishal</td>
                                 <td>Agriculture Technology</td>
