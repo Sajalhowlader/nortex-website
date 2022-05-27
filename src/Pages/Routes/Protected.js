@@ -1,3 +1,4 @@
+import { signOut } from "firebase/auth";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
@@ -11,6 +12,7 @@ const Protected = () => {
     return <PreLoader />;
   }
   if (!user) {
+    signOut(auth)
     return <Navigate to="/singIn" state={{ from: location }} replace />;
   }
 

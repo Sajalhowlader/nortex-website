@@ -12,6 +12,7 @@ import MyOrder from "./Pages/Dashboard/MyOrder";
 import Feedback from "./Pages/Dashboard/Feedback";
 import MyProfile from "./Pages/Dashboard/MyProfile";
 import Users from "./Pages/Dashboard/Users";
+import AdminProtected from "./Pages/Routes/AdminProtected";
 
 function App() {
   return (
@@ -32,7 +33,9 @@ function App() {
             <Route path="myOrder" element={<MyOrder />} />
             <Route path="review" element={<Feedback />} />
             <Route path="myProfile" element={<MyProfile />} />
-            <Route path="users" element={<Users />} />
+            <Route element={<AdminProtected />}>
+              <Route path="users" element={<Users />} />
+            </Route>
           </Route>
         </Route>
       </Routes>
