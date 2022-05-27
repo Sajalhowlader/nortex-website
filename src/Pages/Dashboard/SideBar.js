@@ -17,20 +17,33 @@ const SideBar = ({ children }) => {
           <ul class="menu p-4 overflow-y-auto w-60 bg-[#e4e1e1] text-base-content">
             {/* <!-- Sidebar content here --> */}
             <li>
-              <NavLink to="/dashboard/myOrder">My Order</NavLink>
-            </li>
-            <li>
-
-              <NavLink to="/dashboard/review">Review</NavLink>
-            </li>
-            <li>
               <NavLink to="/dashboard/myProfile">My Profile</NavLink>
             </li>
+
             {
-              admin && <li>
-                <NavLink to="/dashboard/users">All Users</NavLink>
-              </li>
+              admin ? <>
+                <li>
+                  <NavLink to="/dashboard/users">Make Admin</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/addProduct">Add Product</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/users">Manage Product</NavLink>
+                </li>
+              </>
+                :
+                <>
+                  <li>
+                    <NavLink to="/dashboard/myOrder">My Order</NavLink>
+                  </li>
+                  <li>
+
+                    <NavLink to="/dashboard/review">Review</NavLink>
+                  </li>
+                </>
             }
+
           </ul>
         </div>
       </div>

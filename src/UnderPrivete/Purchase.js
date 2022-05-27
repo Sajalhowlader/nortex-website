@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 import auth from "../firebaseCredential";
 import PreLoader from "../Pages/Shared/PreLoader";
 import { useForm } from "react-hook-form";
+import useAdmin from "../hooks/useAdmin";
+import { toast } from "react-toastify";
 
 const Purchase = () => {
   const {
@@ -12,6 +14,7 @@ const Purchase = () => {
     handleSubmit,
   } = useForm();
   const [user, isLoading] = useAuthState(auth);
+  const [admin] = useAdmin(user)
   const { purchaseId } = useParams();
   const [items, setItems] = useState({});
   useEffect(() => {
@@ -46,7 +49,7 @@ const Purchase = () => {
       .then((res) => res.json)
       .then((result) => {
         if (result) {
-          alert("add successFully");
+          toast.success("Buy successFully");
         }
       });
   };
@@ -146,11 +149,17 @@ const Purchase = () => {
               </strong>
             )}
 
-            {
-              <input
+            {admin ?
+              <button
+                disabled
                 className="care-btn care-2 care-3 "
                 type="submit"
-                value="Book"
+                value="BUY"
+              />
+              : <input
+                className="care-btn care-2 care-3 "
+                type="submit"
+                value="BUY"
               />
             }
           </form>
