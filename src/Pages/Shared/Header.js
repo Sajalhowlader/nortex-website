@@ -67,6 +67,9 @@ const Header = () => {
                 <NavLink className="menu-link" to="/blogs">
                   BLOGS
                 </NavLink>
+                <NavLink className="menu-link" to="/protFolio">
+                  PORTFOLIO
+                </NavLink>
 
                 {user && (
                   <NavLink className="menu-link" to="/dashboard/myProfile">

@@ -38,55 +38,7 @@
 }
 
 /* for responsive nav ber */
-@media screen and (max-width: 668px) {
-  .logo-menu-container {
-    flex-direction: column;
-  }
 
-  .mobile-btn {
-    flex-direction: column;
-    display: none;
-    transition: 4s;
-  }
-
-  .hambarger {
-    display: block;
-    margin-left: 100%;
-    margin-top: -2%;
-  }
-
-  .ham-2 {
-    margin-right: 100%;
-    margin-bottom: -16%;
-  }
-
-  .site-name {
-    margin-top: -40px;
-    margin-bottom: 20px;
-  }
-
-  .menu-ul {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .sing-in {
-    margin-left: 0px;
-    margin-top: 12px;
-  }
-
-  .menu-link {
-    margin-left: 0px;
-  }
-
-  .menu-btn {
-    flex-direction: column;
-  }
-
-  .avater-img {
-    display: none;
-  }
-}
 
 /* Home img for carousel  */
 
@@ -589,6 +541,43 @@
   border-radius: 15px;
 }
 
+/* Profile */
+.profile-color {
+  height: 250px;
+}
+
+.profile-container {
+  width: 100%;
+  box-shadow: none;
+}
+
+.profile-info {
+  margin-top: -180px;
+}
+
+.flex.flex-col.mx-auto {
+  background: #010e1a;
+  width: 40%;
+  padding: 20px;
+  border-radius: 10px;
+  color: #ff004f;
+}
+
+.technology {
+  width: 40%;
+  background: #03021e;
+  color: #ff0059;
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.technology p {
+  background: #2d2c2e;
+  margin: 12px;
+  border-radius: 4px;
+  padding: 5px;
+}
+
 /* sing in form all styles */
 
 .singIn-container {
@@ -771,4 +760,62 @@
   background: #020713;
   color: white;
   font-weight: bold;
+}
+
+
+
+
+
+@media screen and (max-width: 668px) {
+  .logo-menu-container {
+    flex-direction: column;
+  }
+
+  .technology {
+    width: 100%;
+  }
+
+  .mobile-btn {
+    flex-direction: column;
+    display: none;
+    transition: 4s;
+  }
+
+  .hambarger {
+    display: block;
+    margin-left: 100%;
+    margin-top: -2%;
+  }
+
+  .ham-2 {
+    margin-right: 100%;
+    margin-bottom: -16%;
+  }
+
+  .site-name {
+    margin-top: -40px;
+    margin-bottom: 20px;
+  }
+
+  .menu-ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sing-in {
+    margin-left: 0px;
+    margin-top: 12px;
+  }
+
+  .menu-link {
+    margin-left: 0px;
+  }
+
+  .menu-btn {
+    flex-direction: column;
+  }
+
+  .avater-img {
+    display: none;
+  }
 }
