@@ -17,7 +17,7 @@ const AllTools = ({ tool, handleDelete }) => {
                     <p className="price">Price: ${price}</p>
                     <p className="dis">Description:{dis.slice(0, 70) + "..."}</p>
                     <button onClick={() => handleDelete(_id)} className="care-btn">
-                        purchase
+                        Delete
                     </button>
                 </div>
             </div>
