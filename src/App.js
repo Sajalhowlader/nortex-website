@@ -14,6 +14,7 @@ import MyProfile from "./Pages/Dashboard/MyProfile";
 import Users from "./Pages/Dashboard/Users";
 import AdminProtected from "./Pages/Routes/AdminProtected";
 import AddProduct from "./Pages/Dashboard/AddProduct";
+import ManageProduct from "./Pages/Dashboard/ManageProduct";
 
 function App() {
   return (
@@ -37,7 +38,7 @@ function App() {
             <Route element={<AdminProtected />}>
               <Route path="users" element={<Users />} />
               <Route path="addProduct" element={<AddProduct />} />
-              <Route path="manageProduct" element={<AddProduct />} />
+              <Route path="manageProduct" element={<ManageProduct />} />
             </Route>
           </Route>
         </Route>

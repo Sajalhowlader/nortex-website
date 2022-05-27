@@ -29,7 +29,7 @@ const SideBar = ({ children }) => {
                   <NavLink to="/dashboard/addProduct">Add Product</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/dashboard/users">Manage Product</NavLink>
+                  <NavLink to="/dashboard/manageProduct">Manage Product</NavLink>
                 </li>
               </>
                 :
