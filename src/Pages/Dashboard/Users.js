@@ -33,6 +33,7 @@ const Users = () => {
     console.log(users);
     return (
         <div>
+            <h1 className="text-center font-bold text-2xl mb-8">Users/Admin</h1>
             <div class="overflow-x-auto">
                 <table class="table w-full">
 

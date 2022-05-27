@@ -71,6 +71,12 @@ const PortFolio = () => {
                     <p className='text-2xl text-center font-bold'>NODE JS</p>
                     <p className='text-2xl text-center font-bold'>MONGO DB</p>
                 </div>
+                <p className='text-center text-3xl font-bold text-blue-700 my-8'>SOME OF MY PROJECT</p>
+                <div>
+                    <a className='text-center font-bold text-lg text-green-900 block' href=" https://gym-edge-react.web.app/">GIM AID</a>
+                    <a className='text-center font-bold text-lg text-green-900 block' href=" https://c-and-a-warehouse.web.app/">CASH AND CARRY WAREHOUSE</a>
+                    <a className='text-center font-bold text-lg text-green-900 block mb-16' href=" https://sajalhowlader.github.io/Toing-web/">TOING</a>
+                </div>
             </div>
         </div>
     );

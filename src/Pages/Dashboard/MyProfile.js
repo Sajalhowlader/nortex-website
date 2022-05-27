@@ -78,12 +78,12 @@ const MyProfile = () => {
             <input name="Linkedin" className="profile-input" type="text" placeholder="Your Linkedin Link" />
             <div className="flex">
               <input
-                className="care-btn care-2  feedback mt-3 cursor-pointer bg-green-600"
+                className="care-btn  mt-3 cursor-pointer bg-green-600"
                 type="submit"
                 value="SAVE"
               />
               <input
-                className="care-btn care-2  feedback mt-3 cursor-pointer"
+                className="care-btn  mt-3 cursor-pointer"
                 type="submit"
                 value="UPDATE"
               />
