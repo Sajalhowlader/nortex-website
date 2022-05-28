@@ -1,6 +1,7 @@
 import Home from "../Home/Home";
 import AllProducts from "../Shared/AllProducts";
 import Blogs from "../Shared/Blogs";
+import NotFound from "../Shared/NotFound";
 import PortFolio from "../Shared/PortFolio";
 import SingIn from "../User/SingIn";
 import SingUp from "../User/SingUp";
@@ -13,4 +14,5 @@ export const openRoutes = [
   { path: "blogs", Component: Blogs },
   { path: "allProducts", Component: AllProducts },
   { path: "protFolio", Component: PortFolio },
+  { path: "*", Component: NotFound },
 ];
