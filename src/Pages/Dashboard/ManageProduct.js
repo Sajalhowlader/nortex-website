@@ -6,14 +6,14 @@ const ManageProduct = () => {
 
     const [allTools, setAllTools] = useState([])
     useEffect(() => {
-        fetch("http://localhost:5000/tools")
+        fetch("https://intense-brook-95091.herokuapp.com/tools")
             .then((res) => res.json())
             .then((data) => setAllTools(data));
     }, []);
     const handleDelete = (id) => {
         const areYouSure = window.confirm("Are you want to Delete your Items")
         if (areYouSure) {
-            const url = `http://localhost:5000/deleteTools/${id}`
+            const url = `https://intense-brook-95091.herokuapp.com/deleteTools/${id}`
             fetch(url, {
                 method: 'DELETE',
                 headers: {

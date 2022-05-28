@@ -3,7 +3,7 @@ import React from 'react';
 const UsersTable = ({ info, index }) => {
     const { email } = info
     // const makeAdmin = () => {
-    //     fetch(`http://localhost:5000/user/admin/${email}`, {
+    //     fetch(`https://intense-brook-95091.herokuapp.com/user/admin/${email}`, {
     //         method: "PUT",
     //         headers: {
     //             authorization: `Bearer ${localStorage.getItem('accessToken')}`

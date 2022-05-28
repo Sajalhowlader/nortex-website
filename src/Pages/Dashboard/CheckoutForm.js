@@ -9,7 +9,7 @@ const CheckoutForm = ({ payment }) => {
     const [errors, setErrors] = useState('')
     const [clientSecret, setClientSecret] = useState('');
     // useEffect(() => {
-    //     fetch('http://localhost:5000/create-payment-intent', {
+    //     fetch('https://intense-brook-95091.herokuapp.com/create-payment-intent', {
     //         method: 'POST',
     //         headers: {
     //             'content-type': 'application/json',

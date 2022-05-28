@@ -4,7 +4,7 @@ import { useQuery } from "react-query";
 import PreLoader from "../Shared/PreLoader";
 const Review = () => {
   const { data: reviews, isLoading } = useQuery("reviews", () =>
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://intense-brook-95091.herokuapp.com/reviews", {
       headers: {
         "content-type": "application/json",
         authorization: `Bearer ${localStorage.getItem('accessToken')}`

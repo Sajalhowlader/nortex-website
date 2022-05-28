@@ -21,7 +21,7 @@ const Feedback = () => {
       name: user.displayName,
     };
 
-    fetch("http://localhost:5000/addReview", {
+    fetch("https://intense-brook-95091.herokuapp.com/addReview", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -86,7 +86,7 @@ const Feedback = () => {
             <input
               className="care-btn care-2  feedback mt-3"
               type="submit"
-              value="Book"
+              value="done"
             />
           }
         </div>

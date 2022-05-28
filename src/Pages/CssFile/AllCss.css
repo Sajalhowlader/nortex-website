@@ -821,6 +821,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 0;
+    height: 0;
   }
 
   .home-img img {
@@ -909,5 +910,15 @@
 
   .inputFrom {
     margin-top: 14%;
+  }
+
+  .manage-tools {
+    padding: 0px;
+  }
+
+  .cs-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 15px;
   }
 }

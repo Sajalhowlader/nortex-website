@@ -26,7 +26,7 @@ const MyProfile = () => {
     }
     const email = user?.email
     if (email) {
-      fetch(`http://localhost:5000/updateProfile/${email}`, {
+      fetch(`https://intense-brook-95091.herokuapp.com/updateProfile/${email}`, {
         method: "PUT",
         headers: {
           'Content-type': 'application/json; charset=UTF-8',

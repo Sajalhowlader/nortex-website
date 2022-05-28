@@ -6,7 +6,7 @@ const AllProducts = () => {
 
 
     useEffect(() => {
-        fetch("http://localhost:5000/tools")
+        fetch("https://intense-brook-95091.herokuapp.com/tools")
             .then((res) => res.json())
             .then((data) => setAllTools(data));
     }, []);
@@ -16,7 +16,7 @@ const AllProducts = () => {
             <section className=" bg-tools">
                 <div className="container mx-auto">
                     <div className="title">
-                        <h1>TOOLS</h1>
+                        <h1>ALL TOOLS</h1>
                     </div>
                     <div className="allTooles">
                         {allTools.map((tool) => (

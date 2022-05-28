@@ -18,7 +18,7 @@ const Purchase = () => {
   const { purchaseId } = useParams();
   const [items, setItems] = useState({});
   useEffect(() => {
-    const url = `http://localhost:5000/tools/${purchaseId}`;
+    const url = `https://intense-brook-95091.herokuapp.com/tools/${purchaseId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setItems(data));
@@ -39,7 +39,7 @@ const Purchase = () => {
       address: address,
       phone: phone,
     };
-    fetch("http://localhost:5000/bookings", {
+    fetch("https://intense-brook-95091.herokuapp.com/bookings", {
       method: "POST",
       headers: {
         "content-type": "application/json",
