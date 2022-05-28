@@ -4,7 +4,9 @@ Nortex tools live site link [Nortex website](https://nortex-83a1c.web.app/).
 
 
 ## `Description`
-This is Invento warehouse website.In this website you can manage your product. You can update your stock. You can add new items in your stock.You can delete your item.
+This is Nortex Tools website.User can see all tools and buy tool.
+Admin Can manage all tools and add tools
+
 
 ### `What i have done in this project`
 * At first make a banner,tools items, review section, partner section,contact section,and two meaningful section and a footer.
