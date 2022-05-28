@@ -21,12 +21,7 @@ const AllTools = ({ tool, handleDelete }) => {
                     </div>
                     <p className="price">Price: ${price}</p>
                     <p className="dis">Description:{dis.slice(0, 70) + "..."}</p>
-                    <button onClick={() => handleDelete(_id)} className="care-btn">
-                        Delete
-                    </button>
-                    <button onClick={handleAdd} className="care-btn">
-                        Add Product
-                    </button>
+                    <div className='d-flex gap-8'></div>
                 </div>
             </div>
         </>
