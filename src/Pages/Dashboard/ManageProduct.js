@@ -37,7 +37,7 @@ const ManageProduct = () => {
                 <div className="title">
                     <h1>ALL TOOLS</h1>
                 </div>
-                <div className="allTooles">
+                <div className="allTooles manage_tools">
                     {allTools.map((tool) => (
                         <AllTools key={tool._id} tool={tool} handleDelete={handleDelete} />
                     ))}

@@ -921,4 +921,9 @@
     grid-template-columns: 1fr;
     padding: 15px;
   }
+
+  .manage_tools {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
