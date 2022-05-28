@@ -7,7 +7,6 @@ const Review = () => {
     fetch("https://intense-brook-95091.herokuapp.com/reviews", {
       headers: {
         "content-type": "application/json",
-        authorization: `Bearer ${localStorage.getItem('accessToken')}`
       }
     }).then((res) => res.json())
   );
