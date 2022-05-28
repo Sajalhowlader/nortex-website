@@ -15,6 +15,7 @@ import Users from "./Pages/Dashboard/Users";
 import AdminProtected from "./Pages/Routes/AdminProtected";
 import AddProduct from "./Pages/Dashboard/AddProduct";
 import ManageProduct from "./Pages/Dashboard/ManageProduct";
+import Payment from "./Pages/Dashboard/Payment";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />}>
             <Route path="myOrder" element={<MyOrder />} />
             <Route path="review" element={<Feedback />} />
+            <Route path="payment/:paymentId" element={<Payment />} />
             <Route path="myProfile" element={<MyProfile />} />
             <Route element={<AdminProtected />}>
               <Route path="users" element={<Users />} />

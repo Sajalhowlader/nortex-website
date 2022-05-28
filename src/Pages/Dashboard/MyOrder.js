@@ -1,7 +1,7 @@
 import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import auth from "../../firebaseCredential";
 
 const MyOrder = () => {
@@ -65,10 +65,8 @@ const MyOrder = () => {
                 <td>{booking.username}</td>
                 <td>{booking.email}</td>
                 <td>
-                  <button className="btn btn-xs bg-green-500">Paid</button>
-                </td>
-                <td>
-                  <button className="btn btn-xs bg-red-500">Cancel</button>
+                  {(booking.price && !booking.paid) && <Link to={`/dashboard/payment/${booking._id}`}><button className="btn btn-xs bg-green-700 " >Paid</button></Link>}
+                  {(booking.price && booking.paid) && <button className="btn btn-xs bg-green-700 " >Cancel</button>}
                 </td>
               </tr>
             ))}
