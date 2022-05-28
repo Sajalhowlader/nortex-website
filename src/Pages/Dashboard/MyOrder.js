@@ -45,7 +45,7 @@ const MyOrder = () => {
               <th>Quantity</th>
               <th>User Name</th>
               <th>Email</th>
-              <th>Paid</th>
+              <th>Pay</th>
               <th>Cancel</th>
             </tr>
           </thead>
@@ -65,7 +65,7 @@ const MyOrder = () => {
                 <td>{booking.username}</td>
                 <td>{booking.email}</td>
                 <td>
-                  {(booking.price && !booking.paid) && <Link to={`/dashboard/payment/${booking._id}`}><button className="btn btn-xs bg-green-700 " >Paid</button></Link>}
+                  {(booking.price && !booking.paid) && <Link to={`/dashboard/payment/${booking._id}`}><button className="btn btn-xs bg-green-700 " >Pay</button></Link>}
                   {(booking.price && booking.paid) && <button className="btn btn-xs bg-green-700 " >Cancel</button>}
                 </td>
               </tr>

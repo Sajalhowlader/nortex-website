@@ -12,7 +12,6 @@ const Feedback = () => {
   } = useForm();
   const [user] = useAuthState(auth)
   const onSubmit = (data) => {
-    console.log(data);
     const { star, review } = data;
     const addReview = {
       img: user.photoURL,

@@ -34,8 +34,6 @@ const Users = () => {
                 }
             })
     }
-
-    console.log(users);
     return (
         <div>
             <h1 className="text-center font-bold text-2xl mb-8">Users/Admin</h1>
