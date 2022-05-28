@@ -529,6 +529,11 @@
   width: 40%;
 }
 
+.manage_tools {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
 /* Blogs */
 
 .blog-info {
@@ -922,8 +927,5 @@
     padding: 15px;
   }
 
-  .manage_tools {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
+
 }
