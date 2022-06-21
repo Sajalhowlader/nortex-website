@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const ShowTools = ({ tool }) => {
@@ -11,9 +10,6 @@ const ShowTools = ({ tool }) => {
   return (
     <>
       <div className="tools-card">
-        <div className="card-img">
-          <img src={img} alt="" />
-        </div>
         <div className="card-info">
           <h2>{name}</h2>
           <div className="order-able">
@@ -25,6 +21,9 @@ const ShowTools = ({ tool }) => {
           <button onClick={() => handlePurchase(_id)} className="care-btn">
             purchase
           </button>
+        </div>
+        <div className="card-img">
+          <img src={img} alt="" />
         </div>
       </div>
     </>

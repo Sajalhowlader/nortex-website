@@ -5,11 +5,11 @@ const Tooles = () => {
   const [tools, setTools] = useState([]);
 
   useEffect(() => {
-    fetch("tools.json")
+    fetch("http://localhost:5000/tools")
       .then((res) => res.json())
       .then((data) => setTools(data));
   }, []);
-// http://localhost:5000/tools
+
   return (
     <>
       <section className=" bg-tools">
@@ -18,7 +18,7 @@ const Tooles = () => {
             <h1>TOOLS</h1>
           </div>
           <div className="allTooles">
-            {tools.slice(0, 8).map((tool) => (
+            {tools.slice(0, 1).map((tool) => (
               <ShowTools key={tool._id} tool={tool} />
             ))}
           </div>
