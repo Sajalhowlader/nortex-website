@@ -1,7 +1,7 @@
+import { FaStar } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-
 const ShowTools = ({ tool }) => {
-  const { _id, name, img, dis, price, minOrder, available } = tool;
+  const { _id, name, img, dis, price, minOrder, available,star } = tool;
   const navigate = useNavigate();
 
   const handlePurchase = (id) => {
@@ -16,6 +16,9 @@ const ShowTools = ({ tool }) => {
         <div className="tools-containers">
           <div className="card-img">
             <img src={img} alt="" />
+            {[...Array(parseInt(star))].map((start, index) => {
+                  return <FaStar className="mx-1" key={index} />
+                })}
             <h2>{name}</h2>
           </div>
           <div className="card-info">

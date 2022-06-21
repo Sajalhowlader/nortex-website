@@ -5,7 +5,8 @@
     "dis": "RYOBI powers through almost anything. From drilling, driving, cutting and fastening to lighting plumbing, cooling and rocking to trimming, edging, mowing and clearing, our ONE+ is the system that delivers more.",
     "price": 250,
     "minOrder": 260,
-    "available": 1480
+    "available": 1480,
+    "star": 5
   },
   {
     "name": "Porter Cable",
@@ -13,7 +14,8 @@
     "dis": "RYOBI powers through almost anything. From drilling, driving, cutting and fastening to lighting plumbing, cooling and rocking to trimming, edging, mowing and clearing, our ONE+ is the system that delivers more.",
     "price": 270,
     "minOrder": 240,
-    "available": 1580
+    "available": 1580,
+    "star": 4.8
   },
   {
     "name": "Rolling Pin",
@@ -21,7 +23,8 @@
     "dis": "RYOBI powers through almost anything. From drilling, driving, cutting and fastening to lighting plumbing, cooling and rocking to trimming, edging, mowing and clearing, our ONE+ is the system that delivers more.",
     "price": 370,
     "minOrder": 280,
-    "available": 1650
+    "available": 1650,
+    "star": 4.8
   },
   {
     "name": "Makita Dcs",
@@ -29,7 +32,8 @@
     "dis": "RYOBI powers through almost anything. From drilling, driving, cutting and fastening to lighting plumbing, cooling and rocking to trimming, edging, mowing and clearing, our ONE+ is the system that delivers more.",
     "price": 199,
     "minOrder": 250,
-    "available": 1480
+    "available": 1480,
+    "star": 5
   },
   {
     "name": "Black Dacker",
@@ -37,7 +41,8 @@
     "dis": "RYOBI powers through almost anything. From drilling, driving, cutting and fastening to lighting plumbing, cooling and rocking to trimming, edging, mowing and clearing, our ONE+ is the system that delivers more.",
     "price": 340,
     "minOrder": 240,
-    "available": 1880
+    "available": 1880,
+    "star": 5
   },
   {
     "name": "Bosch gws",
@@ -45,7 +50,8 @@
     "dis": "RYOBI powers through almost anything. From drilling, driving, cutting and fastening to lighting plumbing, cooling and rocking to trimming, edging, mowing and clearing, our ONE+ is the system that delivers more.",
     "price": 399,
     "minOrder": 220,
-    "available": 1850
+    "available": 1850,
+    "star": 4.5
   },
   {
     "name": "Brad Nailers",
@@ -53,7 +59,8 @@
     "dis": "RYOBI powers through almost anything. From drilling, driving, cutting and fastening to lighting plumbing, cooling and rocking to trimming, edging, mowing and clearing, our ONE+ is the system that delivers more.",
     "price": 380,
     "minOrder": 150,
-    "available": 1450
+    "available": 1450,
+    "star": 5
   },
   {
     "name": "Ridgrid Palm",
@@ -61,7 +68,8 @@
     "dis": "RYOBI powers through almost anything. From drilling, driving, cutting and fastening to lighting plumbing, cooling and rocking to trimming, edging, mowing and clearing, our ONE+ is the system that delivers more.",
     "price": 250,
     "minOrder": 260,
-    "available": 1800
+    "available": 1800,
+    "star": 4.5
   },
   {
     "name": "Bosch Drill",
@@ -69,7 +77,8 @@
     "dis": "RYOBI powers through almost anything. From drilling, driving, cutting and fastening to lighting plumbing, cooling and rocking to trimming, edging, mowing and clearing, our ONE+ is the system that delivers more.",
     "price": 320,
     "minOrder": 300,
-    "available": 1550
+    "available": 1550,
+    "star": 5
   },
   {
     "name": "Bosch GG5",
@@ -77,7 +86,8 @@
     "dis": "RYOBI powers through almost anything. From drilling, driving, cutting and fastening to lighting plumbing, cooling and rocking to trimming, edging, mowing and clearing, our ONE+ is the system that delivers more.",
     "price": 240,
     "minOrder": 200,
-    "available": 1600
+    "available": 1600,
+    "star": 4.5
   },
   {
     "name": "Ryobi R18",
@@ -85,7 +95,8 @@
     "dis": "RYOBI powers through almost anything. From drilling, driving, cutting and fastening to lighting plumbing, cooling and rocking to trimming, edging, mowing and clearing, our ONE+ is the system that delivers more.",
     "price": 450,
     "minOrder": 150,
-    "available": 1250
+    "available": 1250,
+    "star": 5
   },
   {
     "name": "Angle Grinder",
@@ -93,6 +104,7 @@
     "dis": "RYOBI powers through almost anything. From drilling, driving, cutting and fastening to lighting plumbing, cooling and rocking to trimming, edging, mowing and clearing, our ONE+ is the system that delivers more.",
     "price": 230,
     "minOrder": 250,
-    "available": 1500
+    "available": 1500,
+    "star": 4.5
   }
 ]
