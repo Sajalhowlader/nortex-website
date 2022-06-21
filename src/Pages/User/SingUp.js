@@ -30,7 +30,8 @@ const SingUp = () => {
   } = useForm();
   let errorMessage;
   const [createUser, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const [updateProfile, updating] = useUpdateProfile(auth);
   const onSubmit = async (data) => {
@@ -41,8 +42,13 @@ const SingUp = () => {
   const [token] = useToken(gUser || user);
 
   const handleSingIn = () => {
+    if ({ sendEmailVerification: true }) {
+      toast.success("Email verification send")
+    }
     navigate("/singIn");
+
   };
+
   const handleGoogleSingIn = () => {
     signInWithGoogle();
   };

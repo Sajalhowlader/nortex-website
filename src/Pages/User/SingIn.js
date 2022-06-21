@@ -114,7 +114,7 @@ const SingIn = () => {
                 Please!Enter Your Password
               </strong>
             )}
-
+            <p className="font-medium">Forget Password? <strong className="cursor-pointer text-blue-600">Reset Now</strong></p>
             <input className="sing-up-btn" value="SING IN" type="submit" />
             {errorMessage}
             <div className="divider">OR</div>

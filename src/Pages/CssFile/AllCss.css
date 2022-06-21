@@ -1,5 +1,5 @@
 .nav_ber {
-  background: #070914;
+  background: #060606;
   color: white;
 }
 
@@ -42,15 +42,8 @@
 
 /* Home img for carousel  */
 
-.home-background {
-  background: linear-gradient(#000000d1, #000000e7),
-    linear-gradient(#00000099, #00000099), url(../../images/banner-5.webp);
-  height: 90vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 87vh;
-  min-height: 500px;
-}
+/* 
+
 
 .home-container {
   display: grid;
@@ -83,6 +76,61 @@
   font-weight: 600;
   font-style: italic;
   margin-top: -30px;
+} */
+
+
+
+.home-background {
+  background: linear-gradient(#000000d1, #000000e7),
+    linear-gradient(#00000099, #00000099), url(../../images/banner-5.webp);
+  height: 90vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 87vh;
+  min-height: 500px;
+}
+
+.system-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* background: #04070c; */
+  align-items: center;
+  height: 90vh;
+  min-height: 600px;
+}
+
+.right-side {
+  display: flex;
+  justify-content: start;
+}
+
+.left-side h2 {
+  color: #fffff7;
+  font-size: 45px;
+  font-weight: bold;
+  font-family: arial black;
+}
+
+.left-side {
+  margin: 0 auto;
+  margin-top: -50px;
+}
+
+.left-side p {
+  color: #c1c1c1;
+  font-weight: 800;
+  margin: 13px 0px;
+}
+
+.home-btn button {
+  background: #ff0025;
+  margin-right: 60px;
+  padding: 8px 19px;
+  font-weight: bold;
+  color: white;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
 }
 
 /* Tools card style */

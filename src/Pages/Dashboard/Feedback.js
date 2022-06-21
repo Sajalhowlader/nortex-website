@@ -20,7 +20,7 @@ const Feedback = () => {
       name: user.displayName,
     };
 
-    fetch("https://intense-brook-95091.herokuapp.com/addReview", {
+    fetch("http://localhost:5000/addReview", {
       method: "POST",
       headers: {
         "content-type": "application/json",

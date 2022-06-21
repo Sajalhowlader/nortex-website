@@ -11,7 +11,7 @@ const MyOrder = () => {
 
   useEffect(() => {
     if (user) {
-      fetch(`https://intense-brook-95091.herokuapp.com/myItems?userEmail=${user.email}`, {
+      fetch(`http://localhost:5000/myItems?userEmail=${user.email}`, {
         method: "GET",
         headers: {
           "content-type": "application/json",

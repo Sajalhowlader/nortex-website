@@ -1,21 +1,21 @@
 import { Route, Routes } from "react-router-dom";
-import "./styles.css";
-import Header from "./Pages/Shared/Header";
-import { openRoutes } from "./Pages/Routes/OpenRoutes";
-import Footer from "./Pages/Shared/Footer";
-import Protected from "./Pages/Routes/Protected";
-import { closeRoutes } from "./Pages/Routes/CloseRoutes";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AddProduct from "./Pages/Dashboard/AddProduct";
 import Dashboard from "./Pages/Dashboard/Dashboard";
-import MyOrder from "./Pages/Dashboard/MyOrder";
 import Feedback from "./Pages/Dashboard/Feedback";
+import ManageProduct from "./Pages/Dashboard/ManageProduct";
+import MyOrder from "./Pages/Dashboard/MyOrder";
 import MyProfile from "./Pages/Dashboard/MyProfile";
+import Payment from "./Pages/Dashboard/Payment";
 import Users from "./Pages/Dashboard/Users";
 import AdminProtected from "./Pages/Routes/AdminProtected";
-import AddProduct from "./Pages/Dashboard/AddProduct";
-import ManageProduct from "./Pages/Dashboard/ManageProduct";
-import Payment from "./Pages/Dashboard/Payment";
+import { closeRoutes } from "./Pages/Routes/CloseRoutes";
+import { openRoutes } from "./Pages/Routes/OpenRoutes";
+import Protected from "./Pages/Routes/Protected";
+import Footer from "./Pages/Shared/Footer";
+import Header from "./Pages/Shared/Header";
+import "./styles.css";
 
 function App() {
   return (

@@ -8,7 +8,7 @@ const Payment = () => {
     const { paymentId } = useParams()
     const [payment, setPayment] = useState([])
     useEffect(() => {
-        fetch(`https://intense-brook-95091.herokuapp.com/getMyItems/${paymentId}`, {
+        fetch(`http://localhost:5000/getMyItems/${paymentId}`, {
             method: "GET",
             headers: {
                 "content-type": "application/json",

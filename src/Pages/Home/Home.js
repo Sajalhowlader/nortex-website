@@ -1,5 +1,6 @@
 import React from "react";
-import homeImg from "../../images/banner-1-removebg-preview.png";
+import homeToolsImg from '../../images/homeToolsImg.png';
+// import homeImg from '../../images/banner-1-removebg-preview.png'
 import Contacts from "./Contacts";
 import Partner from "./Partner";
 import Review from "./Review";
@@ -8,21 +9,23 @@ import Tooles from "./Tooles";
 const Home = () => {
   return (
     <>
-      <section className="home-background">
-        <div className="home-container">
-          <div className="home-img">
-            <img src={homeImg} alt="" />
-          </div>
-          <div className="content">
-            <h2>
-              <span className="title-first">N</span>
-              <span className="title-second">ORTEX</span>
-              <br />
-              <p> Make Your Day Easy</p>
+      <div className="home-background ">
+        <div className="system-grid container mx-auto">
+          <div className="left-side">
+            <h2>The Better Solution For <br />
+              Your Business
             </h2>
+            <p>We are always with you.We provide you our best service.</p>
+            <div className="flex home-btn">
+              <button>Let's Go</button>
+              <button>Explore More</button>
+            </div>
+          </div>
+          <div className="right-side ">
+            <img src={homeToolsImg} alt="" />
           </div>
         </div>
-      </section>
+      </div>
       <Tooles />
       <Summary />
       <Review />

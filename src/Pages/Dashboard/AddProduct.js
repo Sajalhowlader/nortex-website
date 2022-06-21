@@ -21,7 +21,7 @@ const AddProduct = () => {
             available: available
         }
 
-        fetch('https://intense-brook-95091.herokuapp.com/addProduct', {
+        fetch('http://localhost:5000/addProduct', {
             method: "POST",
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
