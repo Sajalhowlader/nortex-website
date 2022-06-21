@@ -94,31 +94,5 @@
     "price": 230,
     "minOrder": 250,
     "available": 1500
-  },
-  [
-    {
-      "img": "https://i.ibb.co/2Ncx3K1/4-1.jpg",
-      "name": "JHON",
-      "review": " Nortex The best place for buying tools. I my buying important tools from here everyday.I am pleased to there service.",
-      "star": 5
-    },
-    {
-      "img": "https://i.ibb.co/gM3xNn7/7.jpg",
-      "name": "HARRY",
-      "review": " Nortex The best place for buying tools. I my buying important tools from here everyday.I am pleased to there service.",
-      "star": 5
-    },
-    {
-      "img": "https://i.ibb.co/KN3KMSn/8.jpg",
-      "name": "LINDA",
-      "review": " Nortex The best place for buying tools. I my buying important tools from here everyday.I am pleased to there service.",
-      "star": 5
-    },
-    {
-      "img": " https://i.ibb.co/8Yj2m1w/9.jpg",
-      "name": "MICKLE",
-      "review": " Nortex The best place for buying tools. I my buying important tools from here everyday.I am pleased to there service.",
-      "star": 5
-    }
-  ]
+  }
 ]

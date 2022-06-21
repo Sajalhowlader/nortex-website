@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ShowTools from "./ShowTools";
 
 const Tooles = () => {
   const [tools, setTools] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/tools")
+    fetch("tools.json")
       .then((res) => res.json())
       .then((data) => setTools(data));
   }, []);
-
+// http://localhost:5000/tools
   return (
     <>
       <section className=" bg-tools">
@@ -18,7 +18,7 @@ const Tooles = () => {
             <h1>TOOLS</h1>
           </div>
           <div className="allTooles">
-            {tools.slice(0, 6).map((tool) => (
+            {tools.slice(0, 8).map((tool) => (
               <ShowTools key={tool._id} tool={tool} />
             ))}
           </div>

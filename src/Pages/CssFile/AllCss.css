@@ -39,46 +39,7 @@
 
 /* for responsive nav ber */
 
-
 /* Home img for carousel  */
-
-/* 
-
-
-.home-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 100px;
-  height: 500px;
-}
-
-.title-first {
-  font-size: 150px;
-  font-family: system-ui;
-  font-weight: bold;
-  color: #d1132e;
-}
-
-.title-second {
-  font-size: 60px;
-  color: white;
-  font-family: inherit;
-  font-weight: 600;
-  font-style: italic;
-  letter-spacing: 20px;
-}
-
-.content p {
-  font-size: 45px;
-  color: #7f87f0;
-  font-family: inherit;
-  font-weight: 600;
-  font-style: italic;
-  margin-top: -30px;
-} */
-
-
 
 .home-background {
   background: linear-gradient(#000000d1, #000000e7),
@@ -134,11 +95,6 @@
 }
 
 /* Tools card style */
-.bg-tools {
-  padding-bottom: 100px;
-  background: #f9f9f9;
-}
-
 .title {
   text-align: center;
   font-size: 35px;
@@ -147,6 +103,13 @@
   font-style: italic;
   color: #20289a;
 }
+
+/* .bg-tools {
+  padding-bottom: 100px;
+  background: #f9f9f9;
+}
+
+
 
 .title h1 {
   border-bottom: 3px solid;
@@ -162,14 +125,14 @@
 
 .manage-tools {
   padding: 0px 50px
-}
+} */
 
 .allTooles {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 45px;
 }
-
+/* 
 .card-img {
   background: linear-gradient(50deg, #000000, #07053b);
   padding: 15px 0px;
@@ -238,7 +201,6 @@
   background: #ff084b;
   padding: 6px 12px;
   border-radius: 8px;
-  /* justify-content: center; */
   display: flex;
   margin: 0 auto;
   text-transform: uppercase;
@@ -248,7 +210,7 @@
 
 .care-3 {
   margin: 0;
-}
+} */
 
 /* Business summary section */
 .bg-summary {
@@ -382,8 +344,6 @@
   outline: none;
   border-radius: 4px;
 }
-
-
 
 .care-2 {
   padding: 14px 35px;
@@ -524,7 +484,6 @@
   font-weight: bold;
   color: #494444;
 }
-
 
 .card-img p {
   color: #7676ff;
@@ -813,10 +772,6 @@
   font-weight: bold;
 }
 
-
-
-
-
 @media screen and (max-width: 668px) {
   .logo-menu-container {
     flex-direction: column;
@@ -908,10 +863,7 @@
     display: grid;
     grid-template-columns: 1fr;
     padding: 0px 25px;
-
   }
-
-
 
   .ps-co {
     display: grid;
@@ -974,6 +926,4 @@
     grid-template-columns: 1fr;
     padding: 15px;
   }
-
-
 }
