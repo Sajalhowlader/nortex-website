@@ -5,7 +5,7 @@ const Tooles = () => {
   const [tools, setTools] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/tools")
+    fetch("tools.json")
       .then((res) => res.json())
       .then((data) => setTools(data));
   }, []);
@@ -18,7 +18,7 @@ const Tooles = () => {
             <h1>TOOLS</h1>
           </div>
           <div className="allTooles">
-            {tools.slice(0, 1).map((tool) => (
+            {tools.slice(0, 6).map((tool) => (
               <ShowTools key={tool._id} tool={tool} />
             ))}
           </div>

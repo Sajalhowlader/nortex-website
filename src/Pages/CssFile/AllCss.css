@@ -130,88 +130,94 @@
 .allTooles {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 45px;
-}
-/* 
-.card-img {
-  background: linear-gradient(50deg, #000000, #07053b);
-  padding: 15px 0px;
+  gap: 40px 20px;
 }
 
 .card-img img {
-  height: 265px;
+  height: 175px;
   object-fit: cover;
-  width: 265px;
-  border-radius: 50%;
+  width: 70%;
   margin: 0 auto;
+}
+.card-img h2 {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #02026a;
+}
+.tools-card {
+  background: #f3f3f3;
+  border-radius: 5px;
+}
+.tools-containers {
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  margin-top: -20px;
+  border-radius: 5px;
 }
 
 .card-info {
-  color: black;
-  padding: 12px;
-  background: #f7f7f7;
+  position: absolute;
+  background: #000000db;
+  left: 0;
+  top: -100%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+  color: white;
+  transition: all 0.4s;
 }
-
-.card-info h2 {
+.tools-card:hover .card-info {
+  top: 0;
+}
+.order-able {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 10px 0px;
   text-align: center;
   font-weight: bold;
-  text-transform: uppercase;
-  font-size: 25px;
-  color: #0c0c0c;
-}
-
-.order-able {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  text-align: center;
-  padding: 12px 0px;
-}
-
-.order-able p {
-  font-size: 20px;
-  font-weight: 500;
-}
-
-.order-able {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  text-align: center;
-  padding: 12px 0px;
-}
-
-.order-able p {
-  font-size: 21px;
-  font-weight: 500;
+  font-size: 18px;
 }
 
 .price {
+  color: #1babff;
   text-align: center;
-  font-size: 28px;
+
+  font-size: 22px;
   font-weight: bold;
-  font-family: inherit;
-  color: #9686df;
 }
 
 .dis {
-  font-weight: 500;
-  margin: 10px 0px;
+  text-align: center;
+  color: #c9c8ff;
+  font-size: 17px;
 }
-
 .care-btn {
-  background: #ff084b;
-  padding: 6px 12px;
-  border-radius: 8px;
-  display: flex;
-  margin: 0 auto;
-  text-transform: uppercase;
+  background: #ff1800c7;
+  padding: 8px 35px;
+  margin-top: 15px;
+  border-radius: 5px;
   font-weight: bold;
-  color: white;
+}
+.new {
+  display: flex;
+  justify-content: flex-end;
 }
 
-.care-3 {
-  margin: 0;
-} */
-
+.new span {
+  background: #010048;
+  padding: 5px 15px;
+  border-radius: 25px;
+  margin-top: -15px;
+  color: white;
+  font-weight: bold;
+  margin-right: 20px;
+}
 /* Business summary section */
 .bg-summary {
   background-image: linear-gradient(#00000075, #00000075),
