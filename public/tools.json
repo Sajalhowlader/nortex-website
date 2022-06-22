@@ -15,7 +15,7 @@
     "price": 270,
     "minOrder": 240,
     "available": 1580,
-    "star": 4.8
+    "star": 5
   },
   {
     "name": "Rolling Pin",
@@ -24,7 +24,7 @@
     "price": 370,
     "minOrder": 280,
     "available": 1650,
-    "star": 4.8
+    "star": 5
   },
   {
     "name": "Makita Dcs",
@@ -51,7 +51,7 @@
     "price": 399,
     "minOrder": 220,
     "available": 1850,
-    "star": 4.5
+    "star": 5
   },
   {
     "name": "Brad Nailers",
@@ -69,7 +69,7 @@
     "price": 250,
     "minOrder": 260,
     "available": 1800,
-    "star": 4.5
+    "star": 5
   },
   {
     "name": "Bosch Drill",

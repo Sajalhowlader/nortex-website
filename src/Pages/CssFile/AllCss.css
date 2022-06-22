@@ -104,29 +104,6 @@
   color: #20289a;
 }
 
-/* .bg-tools {
-  padding-bottom: 100px;
-  background: #f9f9f9;
-}
-
-
-
-.title h1 {
-  border-bottom: 3px solid;
-  display: inline-block;
-}
-
-.tools-card {
-  width: 100%;
-  border-radius: 13px;
-  overflow: hidden;
-  box-shadow: 5px 7px 17px 0px #727171;
-}
-
-.manage-tools {
-  padding: 0px 50px
-} */
-
 .allTooles {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -145,6 +122,7 @@
   font-size: 1.2rem;
   text-transform: uppercase;
   color: #02026a;
+  margin-top: 30px;
 }
 .tools-card {
   background: #f3f3f3;
@@ -220,13 +198,17 @@
 }
 /* Business summary section */
 .bg-summary {
-  background-image: linear-gradient(#00000075, #00000075),
-    linear-gradient(#00000075, #00000075), url(../../images/svg/fsd.jpg);
+  /* background-image: linear-gradient(#00000075, #00000075),
+    linear-gradient(#00000075, #00000075), url(../../images/svg/rev.jpg);
   overflow: hidden;
+  background: black; */
+  /* background-image: url(../../images/svg/revi.jpg); */
   background-repeat: no-repeat;
   padding: 80px 0px;
   background-size: cover;
   background-attachment: fixed;
+  background-color: #090a27;
+  
 }
 
 .business-container {
@@ -236,10 +218,10 @@
 }
 
 .info_container {
-  background: #001c30;
+  background: #19223c;
   height: 230px;
   border-radius: 10px;
-  box-shadow: 8px 6px 12px 1px #040303;
+  box-shadow: 8px 6px 12px 1px #00000047;
 }
 
 .business-info {
@@ -471,9 +453,6 @@
 }
 
 /* My profile style */
-.card-img p {
-  color: #7676ff;
-}
 
 .profile-card {
   margin: 0 auto;
@@ -489,10 +468,6 @@
   text-align: center;
   font-weight: bold;
   color: #494444;
-}
-
-.card-img p {
-  color: #7676ff;
 }
 
 .showProfile {
