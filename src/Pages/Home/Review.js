@@ -1,7 +1,19 @@
-import React from "react";
-import { FaStar } from "react-icons/fa";
+
 import { useQuery } from "react-query";
 import PreLoader from "../Shared/PreLoader";
+import ShowReviews from "./ShowReviews";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+import '../CssFile/swipper.css'
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+
+// import required modules
+import { EffectCoverflow, Pagination } from "swiper";
+
+
 const Review = () => {
   const { data: reviews, isLoading } = useQuery("reviews", () =>
     fetch("http://localhost:5000/reviews", {
@@ -14,34 +26,38 @@ const Review = () => {
   if (isLoading) {
     return <PreLoader />;
   }
-  console.log(reviews)
+
   return (
     <section className="review-sec">
       <div className="title">
         <h1>HAPPY CUSTOMERS</h1>
       </div>
-      <div className="container mx-auto cs-container">
-        {reviews.map((review) => (
-          <div className="review-container">
-            <div className="color"></div>
-            <div className="reviewer-info">
-              <div className="avatar">
-                <div className="w-36 rounded-full ring ring-white ring-offset-base-100 ">
-                  <img src={review.img} alt="" />
-                </div>
-              </div>
-              <h2 className="cs-name uppercase">{review.name}</h2>
-              <p className="flex justify-center text-[#e90e3d] ">
+     
+     
 
-                {[...Array(parseInt(review.star))].map((start, index) => {
-                  return <FaStar className="mx-1" key={index} />
-                })}
-              </p>
-              <p className="cs-revies">{review.review}</p>
-            </div>
-          </div>
-        ))}
+      <Swiper
+        effect={"coverflow"}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={"auto"}
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        }}
+        pagination={true}
+        modules={[EffectCoverflow, Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+        <div className="container mx-auto cs-container">
+        {reviews.map((review) => <ShowReviews review={review}/> )}
       </div>
+        </SwiperSlide>
+      </Swiper>
+
     </section>
   );
 };

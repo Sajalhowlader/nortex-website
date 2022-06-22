@@ -1,10 +1,10 @@
-import React from "react";
+import CountUp from "react-countup";
 import { FaChartLine, FaGrinStars, FaUserFriends } from "react-icons/fa";
 const Summary = () => {
   return (
     <section>
       <div className="title">
-        <h1>SUMMARY</h1>
+        <h1>Business Summary</h1>
       </div>
       <div className="bg-summary">
         <div className="container mx-auto">
@@ -16,7 +16,8 @@ const Summary = () => {
                 </div>
                 <div className="details">
                   <h1>
-                    <span> 1000 +</span>
+                    <CountUp end={1000} />
+                    <span> +</span>
                     <br />
                     <p className="countInfo">Happy Customers</p>
                   </h1>
@@ -30,7 +31,8 @@ const Summary = () => {
                 </div>
                 <div className="details">
                   <h1>
-                    <span> 150M +</span>
+                    <CountUp end={500} />
+                    <span>M +</span>
                     <br />
                     <p className="countInfo">Annual revenue</p>
                   </h1>
@@ -44,7 +46,8 @@ const Summary = () => {
                 </div>
                 <div className="details">
                   <h1>
-                    <span> 35K +</span>
+                    <CountUp end={35} />
+                    <span>K +</span>
                     <br />
                     <p className="countInfo"> Reviews</p>
                   </h1>
