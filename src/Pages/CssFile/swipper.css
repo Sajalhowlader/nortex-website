@@ -15,3 +15,8 @@
     display: block;
     width: 100%;
   }
+  .swi {
+    width: 400px;
+    height: 300px;
+    /* border-radius: 106px; */
+}

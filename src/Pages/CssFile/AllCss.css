@@ -2,7 +2,11 @@
   background: #060606;
   color: white;
 }
-
+.swi {
+  width: 400px;
+  margin-top: 60px;
+  margin-bottom: 80px;
+}
 .logo-menu-container {
   display: flex;
   justify-content: space-between;
@@ -208,7 +212,6 @@
   background-size: cover;
   background-attachment: fixed;
   background-color: #090a27;
-  
 }
 
 .business-container {
