@@ -45,13 +45,12 @@ const Review = () => {
           slideShadows: true,
         }}
         loop={true}
-        autoplay={{ delay: 1000, disableOnInteraction: false }}
+        
+        autoplay={{  delay: 1000, disableOnInteraction: false }}
         pagination={true}
         modules={[EffectCoverflow, Pagination, Autoplay]}
-        className="mySwiper"
+        className="mySwiper sw-pd"
       >
-      
-
         {reviews.map((review) => (
           <SwiperSlide className="swi">
             <div className="review-container">

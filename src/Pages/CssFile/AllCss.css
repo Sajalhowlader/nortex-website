@@ -119,7 +119,10 @@
   object-fit: cover;
   width: 70%;
   margin: 0 auto;
+  transform: scale(1);
+  transition: all 1s;
 }
+
 .card-img h2 {
   font-weight: bold;
   text-align: center;
@@ -156,6 +159,9 @@
 }
 .tools-card:hover .card-info {
   top: 0;
+}
+.tools-card:hover .card-img img {
+  transform: scale(1.3);
 }
 .order-able {
   display: grid;
@@ -312,6 +318,8 @@
 .pa-img {
   background: #eceaea;
   border-radius: 15px;
+  padding: 0px 60px;
+  margin: 0px 25px;
 }
 
 .pa-img img {
