@@ -1,4 +1,4 @@
-import homeToolsImg from "../../images/homeToolsImg.png";
+import Header from "../Shared/Header";
 // import homeImg from '../../images/banner-1-removebg-preview.png'
 import Contacts from "./Contacts";
 import Partner from "./Partner";
@@ -9,6 +9,7 @@ const Home = () => {
   return (
     <>
       <div className="home-background ">
+        <Header />
         <div className="system-grid container mx-auto">
           <div
             data-aos="fade-right"
@@ -28,12 +29,12 @@ const Home = () => {
               <button>Explore More</button>
             </div>
           </div>
-          <div data-aos="fade-down" data-aos-offset="200"
+          {/* <div data-aos="fade-down" data-aos-offset="200"
             data-aos-delay="50"
             data-aos-duration="1000"
             data-aos-easing="ease-in-out" className="right-side" >
             <img src={homeToolsImg} alt="" />
-          </div>
+          </div> */}
         </div>
       </div>
       <Tooles />

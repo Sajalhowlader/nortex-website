@@ -1,19 +1,21 @@
 .nav_ber {
-  background: #060606;
   color: white;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 10;
+  width: 100%;
 }
 .colorChange {
   background: #021350;
   transition: all 0.5s;
 }
+
 .swi {
   width: 400px;
   margin-top: 60px;
   margin-bottom: 80px;
 }
+
 .logo-menu-container {
   display: flex;
   justify-content: space-between;
@@ -39,9 +41,15 @@
   margin-left: 25px;
 }
 
-.menu-link {
-  margin-left: 16px;
+.menu-ul a {
+  margin-left: 20px;
   font-weight: bold;
+  color: #01063e;
+}
+.menu-link_2 a {
+  margin-left: 20px;
+  font-weight: bold;
+  color: white;
 }
 
 .hambarger {
@@ -53,22 +61,21 @@
 /* Home img for carousel  */
 
 .home-background {
-  background: linear-gradient(#000000d1, #000000e7),
-    linear-gradient(#00000099, #00000099), url(../../images/banner-5.webp);
+  /* background: linear-gradient(#000000d1, #000000e7),
+    linear-gradient(#00000099, #00000099), url(../../images/banner-5.webp); */
   height: 90vh;
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
-  height: 87vh;
-  min-height: 500px;
+  height: 100vh;
+  background-image: url(../../images/svg/home-3.jpg);
 }
 
 .system-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  /* background: #04070c; */
+  grid-template-columns: 0.5fr;
   align-items: center;
-  height: 90vh;
-  min-height: 600px;
+  height: 750px;
 }
 
 .right-side {
@@ -77,7 +84,7 @@
 }
 
 .left-side h2 {
-  color: #fffff7;
+  color: #01063e;
   font-size: 45px;
   font-weight: bold;
   font-family: arial black;
@@ -89,13 +96,13 @@
 }
 
 .left-side p {
-  color: #c1c1c1;
+  color: #ff1a2f;
   font-weight: 800;
   margin: 13px 0px;
 }
 
 .home-btn button {
-  background: #ff0025;
+  background: #00a300;
   margin-right: 60px;
   padding: 8px 19px;
   font-weight: bold;

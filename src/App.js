@@ -20,7 +20,7 @@ import "./styles.css";
 function App() {
   return (
     <div className="styles">
-      <Header />
+      {/* <Header /> */}
       <Routes>
         {openRoutes.map(({ path, Component }, index) => (
           <Route key={index} path={path} element={<Component />}></Route>

@@ -10,7 +10,7 @@ const Header = () => {
   const [user] = useAuthState(auth);
   const [hambarger, setHambarger] = useState(false);
   const changeNavbarColor = () => {
-    if (window.scrollY >= 600) {
+    if (window.scrollY >= 80) {
       setColorchange(true);
     } else {
       setColorchange(false);
@@ -22,7 +22,7 @@ const Header = () => {
   };
 
   return (
-    <nav className={colorChange ? "nav_ber colorChange" : "nav_ber"}>
+    <nav className={colorChange ? "nav_ber colorChange " : "nav_ber"}>
       <div className="container mx-auto px-8">
         <div className="logo-menu-container">
           <label
@@ -66,7 +66,7 @@ const Header = () => {
           </div>
           <div className={hambarger ? "mobile-btn" : "menu-btn"}>
             <div>
-              <ul className="menu-ul">
+              <ul className={colorChange ? " menu-link_2" : "menu-ul"}>
                 <NavLink className="menu-link" to="/">
                   HOME
                 </NavLink>
