@@ -14,12 +14,11 @@ import { closeRoutes } from "./Pages/Routes/CloseRoutes";
 import { openRoutes } from "./Pages/Routes/OpenRoutes";
 import Protected from "./Pages/Routes/Protected";
 import Footer from "./Pages/Shared/Footer";
-import Header from "./Pages/Shared/Header";
 import "./styles.css";
 
 function App() {
   return (
-    <div className="styles">
+    <div>
       {/* <Header /> */}
       <Routes>
         {openRoutes.map(({ path, Component }, index) => (
@@ -44,7 +43,6 @@ function App() {
             </Route>
           </Route>
         </Route>
-        
       </Routes>
       <Footer />
       <ToastContainer />

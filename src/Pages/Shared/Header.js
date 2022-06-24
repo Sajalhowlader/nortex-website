@@ -5,7 +5,7 @@ import { Link, NavLink } from "react-router-dom";
 import auth from "../../firebaseCredential";
 import blank from "../../images/svg/blank.webp";
 import "../../Pages/CssFile/AllCss.css";
-const Header = () => {
+const Header = ({ color }) => {
   const [colorChange, setColorchange] = useState(false);
   const [user] = useAuthState(auth);
   const [hambarger, setHambarger] = useState(false);
@@ -22,7 +22,7 @@ const Header = () => {
   };
 
   return (
-    <nav className={colorChange ? "nav_ber colorChange " : "nav_ber"}>
+    <nav style={{ background: color }} className={colorChange ? "nav_ber colorChange " : "nav_ber"}>
       <div className="container mx-auto px-8">
         <div className="logo-menu-container">
           <label

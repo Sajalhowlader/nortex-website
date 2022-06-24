@@ -1,13 +1,14 @@
-import Header from "../Shared/Header";
 // import homeImg from '../../images/banner-1-removebg-preview.png'
+import Header from "../Shared/Header";
 import Contacts from "./Contacts";
+
 import Partner from "./Partner";
 import Review from "./Review";
 import Summary from "./Summary";
 import Tooles from "./Tooles";
 const Home = () => {
   return (
-    <>
+    <div className="containers">
       <div className="home-background ">
         <Header />
         <div className="system-grid container mx-auto">
@@ -42,7 +43,7 @@ const Home = () => {
       <Review />
       <Partner />
       <Contacts />
-    </>
+    </div>
   );
 };
 

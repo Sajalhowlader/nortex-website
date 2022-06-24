@@ -1,17 +1,20 @@
 .nav_ber {
   color: white;
-  position: fixed;
+  position: sticky;
   top: 0;
   z-index: 10;
-  width: 100%;
 }
 .colorChange {
   background: #021350;
   transition: all 0.5s;
+  position: fixed;
+  top: 0;
+  z-index: 25;
+  width: 100%;
 }
 
 .swi {
-  width: 400px;
+  width: 400px !important;
   margin-top: 60px;
   margin-bottom: 80px;
 }
@@ -75,7 +78,7 @@
   display: grid;
   grid-template-columns: 0.5fr;
   align-items: center;
-  height: 750px;
+  height: 100vh;
 }
 
 .right-side {
