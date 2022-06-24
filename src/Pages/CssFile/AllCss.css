@@ -267,7 +267,7 @@
 }
 
 .review-sec {
-  background: #f7f3f3;
+  background: #d3fbf42e;
 }
 
 .cs-revies {
@@ -336,7 +336,7 @@
 }
 
 .c-info {
-  border: 2px solid #f20848;
+  border: 2px solid #008dd1;
   margin: 11px 0px;
   width: 350px;
   padding: 10px;
@@ -344,10 +344,15 @@
   border-radius: 4px;
 }
 
-.care-2 {
-  padding: 14px 35px;
+.cs-from button {
+  margin: 0 auto;
+  background: #00A300;
+  display: flex;
+  padding: 10px 30px;
+  border-radius: 3px;
+  font-weight: bold;
+  color: white;
 }
-
 /* Preloader style */
 .preloader img {
   width: 180px;

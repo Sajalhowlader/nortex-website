@@ -19,7 +19,7 @@ const Contacts = () => {
             className="c-info h-36"
             placeholder="Your Message"
           ></textarea>
-          <button className="care-btn care-2">submit</button>
+          <button className="">submit</button>
         </div>
       </div>
     </section>
