@@ -1,19 +1,28 @@
 import { signOut } from "firebase/auth";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, NavLink } from "react-router-dom";
 import auth from "../../firebaseCredential";
-import "../../Pages/CssFile/AllCss.css";
 import blank from "../../images/svg/blank.webp";
+import "../../Pages/CssFile/AllCss.css";
 const Header = () => {
+  const [colorChange, setColorchange] = useState(false);
   const [user] = useAuthState(auth);
   const [hambarger, setHambarger] = useState(false);
-
+  const changeNavbarColor = () => {
+    if (window.scrollY >= 600) {
+      setColorchange(true);
+    } else {
+      setColorchange(false);
+    }
+  };
+  window.addEventListener("scroll", changeNavbarColor);
   const handleSingOut = () => {
     signOut(auth);
   };
+
   return (
-    <nav className="nav_ber">
+    <nav className={colorChange ? "nav_ber colorChange" : "nav_ber"}>
       <div className="container mx-auto px-8">
         <div className="logo-menu-container">
           <label
@@ -110,7 +119,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-    </nav >
+    </nav>
   );
 };
 

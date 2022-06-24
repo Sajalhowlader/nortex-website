@@ -1,6 +1,13 @@
 .nav_ber {
   background: #060606;
   color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.colorChange {
+  background: #021350;
+  transition: all 0.5s;
 }
 .swi {
   width: 400px;
@@ -21,11 +28,11 @@
 
 .sing-in {
   padding: 8px 28px;
-  background: #373a4a36;
+  background: #00a300;
   margin-left: 22px;
   border-radius: 4px;
   font-weight: bold;
-  color: #3a57cd;
+  color: #ffffff;
 }
 
 .avater-img {
@@ -186,7 +193,7 @@
   font-size: 17px;
 }
 .care-btn {
-  background: #ff1800c7;
+  background: #00a300;
   padding: 8px 35px;
   margin-top: 15px;
   border-radius: 5px;
@@ -346,7 +353,7 @@
 
 .cs-from button {
   margin: 0 auto;
-  background: #00A300;
+  background: #00a300;
   display: flex;
   padding: 10px 30px;
   border-radius: 3px;
