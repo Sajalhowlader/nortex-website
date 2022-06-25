@@ -1,5 +1,6 @@
 import { FaStar } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+
 const ShowTools = ({ tool }) => {
   const { _id, name, img, dis, price, minOrder, available, star } = tool;
   const navigate = useNavigate();
@@ -38,6 +39,8 @@ const ShowTools = ({ tool }) => {
           </div>
         </div>
       </div>
+
+     
     </>
   );
 };

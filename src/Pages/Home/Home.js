@@ -25,17 +25,15 @@ const Home = () => {
               Your Business
             </h2>
             <p>We are always with you.We provide you our best service.</p>
-            <div className="flex home-btn">
+            <div
+              data-aos="fade-up"
+              data-aos-duration="2000"
+              className="flex home-btn"
+            >
               <button>Let's Go</button>
               <button>Explore More</button>
             </div>
           </div>
-          {/* <div data-aos="fade-down" data-aos-offset="200"
-            data-aos-delay="50"
-            data-aos-duration="1000"
-            data-aos-easing="ease-in-out" className="right-side" >
-            <img src={homeToolsImg} alt="" />
-          </div> */}
         </div>
       </div>
       <Tooles />
