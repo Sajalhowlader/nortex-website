@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useParams } from "react-router-dom";
-import auth from "../firebaseCredential";
-import PreLoader from "../Pages/Shared/PreLoader";
 import { useForm } from "react-hook-form";
-import useAdmin from "../hooks/useAdmin";
+import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
+import auth from "../firebaseCredential";
+import useAdmin from "../hooks/useAdmin";
+import PreLoader from "../Pages/Shared/PreLoader";
 
 const Purchase = () => {
   const {
@@ -14,7 +14,7 @@ const Purchase = () => {
     handleSubmit,
   } = useForm();
   const [user, isLoading] = useAuthState(auth);
-  const [admin] = useAdmin(user)
+  const [admin] = useAdmin(user);
   const { purchaseId } = useParams();
   const [items, setItems] = useState({});
   useEffect(() => {
@@ -43,7 +43,7 @@ const Purchase = () => {
       method: "POST",
       headers: {
         "content-type": "application/json",
-        'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
       body: JSON.stringify(bookingInfo),
     })
@@ -51,7 +51,6 @@ const Purchase = () => {
       .then((result) => {
         if (result) {
           toast.success("Buy successFully");
-
         }
       });
   };
@@ -62,17 +61,19 @@ const Purchase = () => {
       </div>
       <div className="mx-auto container order-container">
         <div className="order-info-container">
-          <div className="order-img">
+          <div className="order-img-and-name">
             <img src={img} alt="" />
-          </div>
-          <div className="order-info">
-            <h2 className="order-name">Name:{name}</h2>
-            <div className="min-max">
-              <h2>Min Order:{minOrder}</h2>
-              <h2>Available:{available}</h2>
+            <div>
+              <h2 className="order-name">{name}</h2>
+              <h1 className="order-price">Price: ${price}</h1>
+              <div className="min-max">
+                <h2>Min Order:{minOrder}</h2>
+                <h2>Available:{available}</h2>
+              </div>
             </div>
-            <h1 className="order-price">Price: ${price}</h1>
-            <p>About:{dis}</p>
+            <div className="order-info">
+              <p>About:{dis}</p>
+            </div>
           </div>
         </div>
         <div className="place-order-container">
@@ -151,19 +152,20 @@ const Purchase = () => {
               </strong>
             )}
 
-            {admin ?
+            {admin ? (
               <button
                 disabled
                 className="care-btn care-2 care-3 "
                 type="submit"
                 value="BUY"
               />
-              : <input
+            ) : (
+              <input
                 className="care-btn care-2 care-3 "
                 type="submit"
                 value="BUY"
               />
-            }
+            )}
           </form>
         </div>
       </div>
