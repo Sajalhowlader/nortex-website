@@ -3,7 +3,7 @@ import Header from "./Header";
 const PortFolio = () => {
   return (
     <>
-      <Header color="black"/>
+       <Header color="#f5fdfd" />
       <div className="review-container profile-container">
         <div className="color profile-color"></div>
         <div className="reviewer-info profile-info">

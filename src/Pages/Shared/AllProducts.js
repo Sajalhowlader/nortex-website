@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Header from './Header';
 import ShowAllProducts from './ShowAllProducts';
 
 const AllProducts = () => {
@@ -13,6 +14,7 @@ const AllProducts = () => {
 
     return (
         <>
+        <Header color="#f5fdfd" />
             <section className=" bg-tools">
                 <div className="container mx-auto">
                     <div className="title">

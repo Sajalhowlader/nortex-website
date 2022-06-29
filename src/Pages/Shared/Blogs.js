@@ -4,7 +4,7 @@ import Header from './Header';
 const Blogs = () => {
     return (
         <div>
-            <Header color="black"/>
+            <Header color="#f5fdfd" />
             <div className='blog-info'>
                 <p className='font-bold text-lg mb-5'>How does prototypical inheritance work?</p>
 

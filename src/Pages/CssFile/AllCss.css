@@ -7,13 +7,14 @@
   transition: all 0.5s;
 }
 .colorChange {
-  background: #021350;
+  background: #f5fdfd;
   transition: all 0.5s;
   position: fixed;
   top: 0;
   z-index: 25;
   width: 100%;
   color: white;
+  box-shadow: -2px -4px 11px 7px #4c4c4c;
 }
 
 .swi {
@@ -54,12 +55,12 @@
 .menu-ul a {
   margin-left: 20px;
   font-weight: bold;
-  color: #01063e;
+  color: #6d15cf;
 }
 .menu-link_2 a {
   margin-left: 20px;
   font-weight: bold;
-  color: white;
+  color: #00126a;
 }
 
 .hambarger {
@@ -73,7 +74,6 @@
 .home-background {
   /* background: linear-gradient(#000000d1, #000000e7),
     linear-gradient(#00000099, #00000099), url(../../images/banner-5.webp); */
-  height: 90vh;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -234,11 +234,6 @@
 }
 /* Business summary section */
 .bg-summary {
-  /* background-image: linear-gradient(#00000075, #00000075),
-    linear-gradient(#00000075, #00000075), url(../../images/svg/rev.jpg);
-  overflow: hidden;
-  background: black; */
-  /* background-image: url(../../images/svg/revi.jpg); */
   background-repeat: no-repeat;
   padding: 80px 0px;
   background-size: cover;
@@ -392,7 +387,10 @@
 }
 
 /* Book now style in one item */
-
+.order-section {
+  height: 100vh;
+  padding: 0px;
+}
 .order-container {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
@@ -401,13 +399,15 @@
 }
 .order-info {
   grid-column: 1/-1;
+  margin-top: -5%;
+  font-weight: 500;
+  color: #343434;
 }
 .order-img-and-name {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   align-items: center;
-}
-.min-max {
+  margin-top: -20%;
 }
 
 .min-max {
@@ -529,14 +529,29 @@
 .profile-card {
   margin: 0 auto;
   width: 40%;
+  box-shadow: 1px 4px 10px 0px #9d9292;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-.profile-card img {
-  width: 30%;
-  height: 30%;
+.profile-card-img {
+  text-align: center;
+  background:radial-gradient(#040b64e6, #000000);
+  padding: 10px;
+}
+.profile-card-info {
+  padding: 15px;
 }
 
-.profile-card p {
+.profile-card-info h2 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  font-family: arial black;
+  text-transform: uppercase;
+  color: #002040;
+}
+.d {
   text-align: center;
   font-weight: bold;
   color: #494444;
@@ -561,7 +576,7 @@
 }
 
 .profile-input {
-  border: 2px solid #ff0056;
+  border: 2px solid #008dd1;
   border-radius: 6px;
   margin-bottom: 8px;
   background: none;
