@@ -22,7 +22,10 @@ const Header = ({ color }) => {
   };
 
   return (
-    <nav style={{ background: color }} className={colorChange ? "nav_ber colorChange " : "nav_ber"}>
+    <nav
+      style={{ background: color }}
+      className={colorChange ? "nav_ber colorChange " : "nav_ber"}
+    >
       <div className="container mx-auto px-8">
         <div className="logo-menu-container">
           <label
@@ -88,33 +91,33 @@ const Header = ({ color }) => {
               </ul>
             </div>
 
-            <div>
-              <Link to="/singIn">
-                {user ? (
-                  <>
-                    {user.photoURL ? (
-                      <img
-                        className="w-10 rounded-full avatar online ring ring-primary ring-offset-base-100  avater-img"
-                        src={user.photoURL}
-                        alt=""
-                      />
-                    ) : (
-                      <img
-                        className="w-10 rounded-full avatar online ring ring-primary ring-offset-base-100  avater-img"
-                        src={blank}
-                        alt=""
-                      />
-                    )}
-                    <button onClick={handleSingOut} className="sing-in">
-                      SING OUT
-                    </button>
-                  </>
-                ) : (
-                  <>
+            <div className="sing-btn">
+              {user ? (
+                <>
+                  {user.photoURL ? (
+                    <img
+                      className="w-10 rounded-full avatar online ring ring-primary ring-offset-base-100  avater-img"
+                      src={user.photoURL}
+                      alt=""
+                    />
+                  ) : (
+                    <img
+                      className="w-10 rounded-full avatar online ring ring-primary ring-offset-base-100  avater-img"
+                      src={blank}
+                      alt=""
+                    />
+                  )}
+                  <button onClick={handleSingOut} className="sing-in">
+                    SING OUT
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link to="/singIn">
                     <button className="sing-in">SING IN</button>
-                  </>
-                )}
-              </Link>
+                  </Link>
+                </>
+              )}
             </div>
           </div>
         </div>

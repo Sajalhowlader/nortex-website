@@ -63,7 +63,7 @@ const MyProfile = () => {
           ) : (
             // <img />
             <div class="avatar">
-              <div class="w-12">
+              <div class="w-36 rounded-full ring ">
                 <img src={blank} alt="" />
               </div>
             </div>

@@ -431,71 +431,6 @@
   font-weight: bold;
   color: #00a300;
 }
-/* .order-info-container {
-  text-align: center;
-  width: 500px;
-  margin: 0 auto;
-}
-
-.order-section {
-  background: #ececec;
-  padding-top: 15px;
-}
-
-.user-info {
-  display: flex;
-  align-items: center;
-}
-
-.user-container {
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 25px;
-}
-
-.user-info p {
-  font-weight: bold;
-  color: #201f1f;
-}
-
-.order-img {
-  width: 380px;
-  background: linear-gradient(60deg, #17154f, #85378c);
-  padding: 30px;
-  border-radius: 50px;
-  margin: 0 auto;
-}
-
-.order-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.order-img img {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  margin: 0 auto;
-}
-
-.order-name {
-  font-size: 28px;
-  font-weight: bold;
-}
-
-
-
-.order-price {
-  font-size: 26px;
-  font-weight: bold;
-  padding: 10px 0px;
-}
-
-.order-info p {
-  text-align: justify;
-  font-weight: 500;
-  color: #444;
-} */
 
 /* Place Order styles */
 .book-field {
@@ -536,7 +471,7 @@
 
 .profile-card-img {
   text-align: center;
-  background:radial-gradient(#040b64e6, #000000);
+  background: radial-gradient(#040b64e6, #000000);
   padding: 10px;
 }
 .profile-card-info {
@@ -591,11 +526,13 @@
 }
 
 .text-area {
-  border: 2px solid #ff0056;
+  border: 2px solid #008dd1;
   border-radius: 6px;
   margin-bottom: 8px;
 }
-
+.text-area:focus {
+  border: 2px solid #008dd1;
+}
 /* Add Products */
 .add-product {
   display: flex;
