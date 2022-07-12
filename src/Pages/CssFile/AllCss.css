@@ -26,7 +26,7 @@
 .logo-menu-container {
   display: flex;
   justify-content: space-between;
-  padding: 20px 0px;
+  padding: 5px 0px;
   align-items: center;
 }
 .site-name h2 {
@@ -38,7 +38,9 @@
   display: flex;
   align-items: center;
 }
-
+.activeStyle{
+  border-bottom: 2px solid red;
+}
 .sing-in {
   padding: 8px 28px;
   background: #00a300;
@@ -72,8 +74,6 @@
 /* Home img for carousel  */
 
 .home-background {
-  /* background: linear-gradient(#000000d1, #000000e7),
-    linear-gradient(#00000099, #00000099), url(../../images/banner-5.webp); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -431,7 +431,11 @@
   font-weight: bold;
   color: #00a300;
 }
-
+.allTotal {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2b0046;
+}
 /* Place Order styles */
 .book-field {
   margin: 10px 0px;

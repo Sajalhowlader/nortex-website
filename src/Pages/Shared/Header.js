@@ -84,7 +84,9 @@ const Header = ({ color }) => {
                 </NavLink>
 
                 {user && (
-                  <NavLink className="menu-link" to="/dashboard/myProfile">
+                  <NavLink className={({ isActive }) =>
+                  isActive ? "activeStyle" : "menu-link"} 
+                   to="/dashboard/myProfile">
                     DASHBOARD
                   </NavLink>
                 )}

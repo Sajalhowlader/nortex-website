@@ -9,27 +9,30 @@ import Header from "../Pages/Shared/Header";
 import PreLoader from "../Pages/Shared/PreLoader";
 
 const Purchase = () => {
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-  } = useForm();
   const [user, isLoading] = useAuthState(auth);
   const [admin] = useAdmin(user);
   const { purchaseId } = useParams();
   const [items, setItems] = useState({});
+  const [quantity, setQuantity] = useState(0);
   useEffect(() => {
     const url = `http://localhost:5000/tools/${purchaseId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setItems(data));
   }, [purchaseId]);
+
   const { name, img, minOrder, dis, price, available } = items;
-  if (isLoading) {
-    return <PreLoader />;
-  }
+
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+    watch,
+  } = useForm();
+
   const onSubmit = (data) => {
     const { username, email, order, address, phone } = data;
+    const total = price * parseFloat(order);
     const bookingInfo = {
       img: img,
       name: name,
@@ -39,6 +42,7 @@ const Purchase = () => {
       price: price,
       address: address,
       phone: phone,
+      total: total,
     };
     fetch("http://localhost:5000/bookings", {
       method: "POST",
@@ -55,6 +59,19 @@ const Purchase = () => {
         }
       });
   };
+
+  const userQuantity = watch("order");
+  const grandTotal = price * quantity;
+  const minTotal = price * minOrder;
+
+  useEffect(() => {
+    setQuantity(userQuantity);
+  }, [userQuantity]);
+
+  if (isLoading) {
+    return <PreLoader />;
+  }
+  console.log(quantity);
   return (
     <>
       <section className="order-section">
@@ -126,9 +143,7 @@ const Purchase = () => {
                   type="number"
                   defaultValue={minOrder}
                   {...register("order", {
-                    required: {
-                      value: true,
-                    },
+                    required: true,
                     min: {
                       value: `${minOrder}`,
                     },
@@ -153,6 +168,19 @@ const Purchase = () => {
                 <strong className="text-red-500 font-bold">
                   You Can't Buy More Than Available 😒
                 </strong>
+              )}
+              {quantity ? (
+                <p className="allTotal">
+                  Total: Price * Quantity =
+                  <span className="text-green-500">$</span>
+                  {grandTotal}
+                </p>
+              ) : (
+                <p className="allTotal">
+                  Total: Price * Quantity ={" "}
+                  <span className="text-green-500">$</span>
+                  {minTotal}
+                </p>
               )}
 
               {admin ? (
