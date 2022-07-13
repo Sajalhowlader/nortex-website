@@ -43,6 +43,7 @@ const MyOrder = () => {
       confirmButtonColor: "green",
       cancelButtonColor: "red",
       confirmButtonText: "Yes, delete it!",
+      width: "400"
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(`http://localhost:5000/cancelOrder/${id}`, {
@@ -118,14 +119,14 @@ const MyOrder = () => {
                   )}
                 </td>
                 <td>
-                  {
-                    booking._id && <button
-                    onClick={() => handleCancel(booking._id)}
-                    className="btn btn-xs bg-red-500 border-0"
-                  >
-                    Cancel
-                  </button>
-                  }
+                  {booking._id && (
+                    <button
+                      onClick={() => handleCancel(booking._id)}
+                      className="btn btn-xs bg-red-500 border-0"
+                    >
+                      Cancel
+                    </button>
+                  )}
                 </td>
               </tr>
             ))}

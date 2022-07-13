@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 import auth from "../firebaseCredential";
 import useAdmin from "../hooks/useAdmin";
 import Header from "../Pages/Shared/Header";
@@ -14,6 +14,7 @@ const Purchase = () => {
   const { purchaseId } = useParams();
   const [items, setItems] = useState({});
   const [quantity, setQuantity] = useState(0);
+  const Swal = require("sweetalert2");
   useEffect(() => {
     const url = `http://localhost:5000/tools/${purchaseId}`;
     fetch(url)
@@ -55,7 +56,11 @@ const Purchase = () => {
       .then((res) => res.json)
       .then((result) => {
         if (result) {
-          toast.success("Buy successFully");
+          Swal.fire({
+            title: "Buy Successfully",
+            icon: "success",
+            width: "25em",
+          });
         }
       });
   };
