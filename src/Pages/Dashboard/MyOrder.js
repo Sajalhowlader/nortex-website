@@ -8,7 +8,7 @@ const MyOrder = () => {
   const [bookings, setBookings] = useState([]);
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
-
+  const Swal = require("sweetalert2");
   useEffect(() => {
     if (user) {
       fetch(`http://localhost:5000/myItems?userEmail=${user.email}`, {
@@ -31,9 +31,49 @@ const MyOrder = () => {
         });
     }
   }, [user, navigate]);
-const handleCancel = () =>{
 
-}
+  // Cancle Order
+
+  const handleCancel = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "green",
+      cancelButtonColor: "red",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/cancelOrder/${id}`, {
+          method: "DELETE",
+          headers: {
+            "content-type": "application/json",
+            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data) {
+              const Toast = Swal.mixin({
+                toast: true,
+                position: "top-center",
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+              });
+
+              Toast.fire({
+                icon: "success",
+                title: "Delete Successfully",
+              });
+              const remaining = bookings.filter((items) => items._id !== id);
+              setBookings(remaining);
+            }
+          });
+      }
+    });
+  };
   return (
     <div>
       <h1 className="text-center font-bold text-2xl mb-8">My Order</h1>
@@ -69,9 +109,24 @@ const handleCancel = () =>{
                 <td>{booking.username}</td>
                 <td>{booking.email}</td>
                 <td>
-                  {(booking.price && !booking.paid) && <Link to={`/dashboard/payment/${booking._id}`}><button className="btn btn-xs bg-green-700 border-0 " >Pay</button></Link>}
+                  {booking.price && !booking.paid && (
+                    <Link to={`/dashboard/payment/${booking._id}`}>
+                      <button className="btn btn-xs bg-green-700 border-0 ">
+                        Pay
+                      </button>
+                    </Link>
+                  )}
                 </td>
-                <td><button onClick={handleCancel(booking._id)} className="btn btn-xs bg-red-500 border-0" >Cancel</button></td>
+                <td>
+                  {
+                    booking._id && <button
+                    onClick={() => handleCancel(booking._id)}
+                    className="btn btn-xs bg-red-500 border-0"
+                  >
+                    Cancel
+                  </button>
+                  }
+                </td>
               </tr>
             ))}
           </tbody>
