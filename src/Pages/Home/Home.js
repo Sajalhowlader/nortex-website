@@ -24,7 +24,7 @@ const Home = () => {
               The Better Solution For <br />
               Your Business
             </h2>
-            <p>We are always with you.We provide you our best service.</p>
+            <p>The best tools serves provider in the city.We trust that we provide you the best service.Also we provide one year service warranty with any prodct.Thanks for being with us.</p>
             <div
               data-aos="fade-up"
               data-aos-duration="2000"

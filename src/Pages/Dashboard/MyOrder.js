@@ -82,13 +82,14 @@ const MyOrder = () => {
         <table className="table w-full">
           <thead>
             <tr>
-              <th>Pic</th>
-              <th>Product Name</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Total Price</th>
-              <th>User Name</th>
+              <th>Name</th>
               <th>Email</th>
+              <th>Img</th>
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th>Total Price</th>
+             
               <th>Pay</th>
               <th>Cancel</th>
             </tr>
@@ -96,19 +97,22 @@ const MyOrder = () => {
           <tbody>
             {bookings.map((booking) => (
               <tr>
-                <th>
+               
+                
+                <td>{booking.username}</td>
+                <td>{booking.email}</td>
+                <td>
                   <div className="avatar">
                     <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                       <img src={booking.img} alt="" />
                     </div>
                   </div>
-                </th>
+                </td>
                 <td>{booking.name}</td>
-                <td>{booking.price}</td>
-                <td>{booking.order}</td>
-                <td>{booking.total}</td>
-                <td>{booking.username}</td>
-                <td>{booking.email}</td>
+                <td>${booking.price}</td>
+                <td>${booking.order}</td>
+                <td>${booking.total}</td>
+                
                 <td>
                   {booking.price && !booking.paid && (
                     <Link to={`/dashboard/payment/${booking._id}`}>

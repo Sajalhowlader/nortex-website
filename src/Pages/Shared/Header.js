@@ -65,21 +65,25 @@ const Header = ({ color }) => {
             </svg>
           </button>
           <div className="site-name">
-            <h2 className="text-3xl text-bold ">Nortex </h2>
+            <h2 className="text-3xl text-bold "><Link to='/'>Nortex</Link></h2>
           </div>
           <div className={hambarger ? "mobile-btn" : "menu-btn"}>
             <div>
               <ul className={colorChange ? " menu-link_2" : "menu-ul"}>
-                <NavLink className="menu-link" to="/">
+                <NavLink className={({ isActive }) =>
+                  isActive ? "activeStyle" : "menu-link"}  to="/">
                   HOME
                 </NavLink>
-                <NavLink className="menu-link" to="/allProducts">
+                <NavLink className={({ isActive }) =>
+                  isActive ? "activeStyle" : "menu-link"}  to="/allProducts">
                   ALL PRODUCTS
                 </NavLink>
-                <NavLink className="menu-link" to="/blogs">
+                <NavLink className={({ isActive }) =>
+                  isActive ? "activeStyle" : "menu-link"}  to="/blogs">
                   BLOGS
                 </NavLink>
-                <NavLink className="menu-link" to="/protFolio">
+                <NavLink className={({ isActive }) =>
+                  isActive ? "activeStyle" : "menu-link"}  to="/protFolio">
                   PORTFOLIO
                 </NavLink>
 
@@ -110,13 +114,13 @@ const Header = ({ color }) => {
                     />
                   )}
                   <button onClick={handleSingOut} className="sing-in">
-                    SING OUT
+                    SIGN OUT
                   </button>
                 </>
               ) : (
                 <>
                   <Link to="/singIn">
-                    <button className="sing-in">SING IN</button>
+                    <button className="sing-in">SIGN IN</button>
                   </Link>
                 </>
               )}

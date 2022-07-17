@@ -1,22 +1,23 @@
 import React, { useEffect } from "react";
+import {
+  useSignInWithEmailAndPassword,
+  useSignInWithGoogle
+} from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import "../../Pages/CssFile/AllCss.css";
-import svgOne from "../../images/svg/undraw_maker_launch_re_rq81 (1).svg";
-import auth from "../../firebaseCredential";
 import {
   FaFacebook,
   FaGithub,
   FaGoogle,
   FaLock,
-  FaUserCircle,
+  FaUserCircle
 } from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router-dom";
-import {
-  useSignInWithEmailAndPassword,
-  useSignInWithGoogle,
-} from "react-firebase-hooks/auth";
-import PreLoader from "../Shared/PreLoader";
+import auth from "../../firebaseCredential";
 import useToken from "../../hooks/useToken";
+import svgOne from "../../images/svg/undraw_maker_launch_re_rq81 (1).svg";
+import "../../Pages/CssFile/AllCss.css";
+import Header from "../Shared/Header";
+import PreLoader from "../Shared/PreLoader";
 
 const SingIn = () => {
   const navigate = useNavigate();
@@ -44,12 +45,12 @@ const SingIn = () => {
   const handleSingUp = () => {
     navigate("/singUp");
   };
-  let from = location.state?.from?.pathname || "/";
+  let form = location.state?.from?.pathname || "/";
   useEffect(() => {
     if (token) {
-      navigate(from, { replace: true });
+      navigate(form, { replace: true });
     }
-  }, [from, token, navigate]);
+  }, [form, token, navigate]);
 
   if (loading || gLoading) {
     return <PreLoader />;
@@ -63,7 +64,11 @@ const SingIn = () => {
     );
   }
   return (
+    <>
+    <Header color="#f5fdfd" />
+    
     <div className="singIn-container">
+       
       <div className="forms-container">
         <div className="logSingInForm">
           <div className="new-here">
@@ -131,6 +136,7 @@ const SingIn = () => {
       </div>
       <div className="panel-container"></div>
     </div>
+    </>
   );
 };
 

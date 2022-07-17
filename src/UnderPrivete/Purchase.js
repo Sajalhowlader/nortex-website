@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 // import { toast } from "react-toastify";
 import auth from "../firebaseCredential";
 import useAdmin from "../hooks/useAdmin";
@@ -30,6 +30,7 @@ const Purchase = () => {
     handleSubmit,
     watch,
   } = useForm();
+  const navigate = useNavigate();
 
   const onSubmit = (data) => {
     const { username, email, order, address, phone } = data;
@@ -58,8 +59,17 @@ const Purchase = () => {
         if (result) {
           Swal.fire({
             title: "Buy Successfully",
+            text: `Are You Want to See Your Order?`,
+            showCloseButton: true,
+            confirmButtonColor: "#3085d6",
+            closeButtonColor: "red",
+            confirmButtonText: "Yes",
             icon: "success",
             width: "25em",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire(navigate("/dashboard/myOrder"));
+            }
           });
         }
       });
@@ -76,7 +86,6 @@ const Purchase = () => {
   if (isLoading) {
     return <PreLoader />;
   }
-  console.log(quantity);
   return (
     <>
       <section className="order-section">
@@ -129,8 +138,9 @@ const Purchase = () => {
                   This Field Is Required 😒
                 </strong>
               )}
-              <div className="book-field h-28">
-                <input
+              <div className="book-field ">
+                <textarea
+                className="w-full h-20 outline-none border-0"
                   type="text"
                   placeholder="Your Address"
                   {...register("address", { required: true })}

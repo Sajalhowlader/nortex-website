@@ -1,24 +1,24 @@
-import { useForm } from "react-hook-form";
+import { useEffect } from "react";
 import {
   useCreateUserWithEmailAndPassword,
-  useSignInWithGoogle,
+  useSignInWithGoogle, useUpdateProfile
 } from "react-firebase-hooks/auth";
-import svgOne from "../../images/svg/undraw_voice_control_ofo1.svg";
-import auth from "../../firebaseCredential";
+import { useForm } from "react-hook-form";
 import {
   FaFacebook,
   FaGithub,
   FaGoogle,
   FaLock,
   FaMailBulk,
-  FaUserCircle,
+  FaUserCircle
 } from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useUpdateProfile } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
-import PreLoader from "../Shared/PreLoader";
+import auth from "../../firebaseCredential";
 import useToken from "../../hooks/useToken";
-import { useEffect } from "react";
+import svgOne from "../../images/svg/undraw_voice_control_ofo1.svg";
+import Header from "../Shared/Header";
+import PreLoader from "../Shared/PreLoader";
 const SingUp = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -45,7 +45,7 @@ const SingUp = () => {
     if ({ sendEmailVerification: true }) {
       toast.success("Email verification send")
     }
-    navigate("/singIn");
+    navigate("/");
 
   };
 
@@ -78,6 +78,7 @@ const SingUp = () => {
   }
   return (
     <div>
+       <Header color="#f5fdfd" />
       <div className="singIn-container">
         <div className="forms-container">
           <div className="logSingInForm">

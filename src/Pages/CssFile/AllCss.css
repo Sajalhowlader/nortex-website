@@ -26,7 +26,7 @@
 .logo-menu-container {
   display: flex;
   justify-content: space-between;
-  padding: 5px 0px;
+  padding: 10px 0px;
   align-items: center;
 }
 .site-name h2 {
@@ -42,7 +42,7 @@
   border-bottom: 2px solid red;
 }
 .sing-in {
-  padding: 8px 28px;
+  padding: 8px 15px;
   background: #00a300;
   margin-left: 22px;
   border-radius: 4px;
@@ -106,13 +106,12 @@
 }
 
 .left-side p {
-  color: #ff1a2f;
-  font-weight: 800;
-  margin: 13px 0px;
+  color: #504d4d;
+  font-weight: 500;
+  margin: 12px 0px;
 }
-
 .home-btn button {
-  background: #00a300;
+  background: #492fb1f2;
   margin-right: 60px;
   padding: 8px 19px;
   font-weight: bold;
@@ -210,7 +209,7 @@
   font-size: 17px;
 }
 .care-btn {
-  background: #00a300;
+  background: #492fb1f2;
   padding: 8px 35px;
   margin: 15px auto;
   border-radius: 5px;
@@ -444,7 +443,8 @@
   border: 2px solid #008dd1;
 }
 
-.book-field input {
+.book-field input,
+textarea {
   background: none;
   outline: none;
   line-height: 1;

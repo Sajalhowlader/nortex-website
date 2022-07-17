@@ -1,26 +1,25 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useEffect, useState } from "react";
 const CheckoutForm = ({ payment }) => {
-  const { price, order, _id, name, email } = payment;
+  const { price,total, order, _id, name, email } = payment;
   const stripe = useStripe();
   const elements = useElements();
-  const [errors, setErrors] = useState("");
-  // const [cardError, setCardError] = useState('');
-  // const [success, setSuccess] = useState('');
-  // const [processing, setProcessing] = useState(false);
-  // const [transactionId, setTransactionId] = useState('');
+  // const [errors, setErrors] = useState("");
+  const [cardError, setCardError] = useState('');
+  const [success, setSuccess] = useState('');
+  const [processing, setProcessing] = useState(false);
+  const [transactionId, setTransactionId] = useState('');
   const [clientSecret, setClientSecret] = useState("");
-  // const totalPrice = Number(order) * price
-
+  const Swal = require("sweetalert2");
   useEffect(() => {
-    if (price) {
+    if (total) {
       fetch("http://localhost:5000/create-payment-intent", {
         method: "POST",
         headers: {
           "content-type": "application/json",
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
-        body: JSON.stringify({ price }),
+        body: JSON.stringify({ total }),
       })
         .then((res) => res.json())
         .then((data) => {
@@ -29,7 +28,7 @@ const CheckoutForm = ({ payment }) => {
           }
         });
     }
-  }, [price]);
+  }, [total]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -49,7 +48,21 @@ const CheckoutForm = ({ payment }) => {
       card,
     });
 
-    setErrors(error?.message || "");
+    // setErrors(error?.message || "");
+    if(error){
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-center",
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+      });
+
+      Toast.fire({
+        icon: "error",
+        title: error.message,
+      });
+    }
     // setSuccess('');
     // setProcessing(true);
     // // confirm card payment
@@ -124,7 +137,7 @@ const CheckoutForm = ({ payment }) => {
           Pay
         </button>
       </form>
-      {errors && <strong className="text-red-600 font-bold">{errors}</strong>}
+   
     </>
   );
 };
