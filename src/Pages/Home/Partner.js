@@ -27,6 +27,7 @@ const Partner = () => {
           <img src={pFive} alt="" />
         </div>
       </Marquee>
+
     </section>
   );
 };

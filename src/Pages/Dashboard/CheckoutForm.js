@@ -1,14 +1,14 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useEffect, useState } from "react";
 const CheckoutForm = ({ payment }) => {
-  const { price,total, order, _id, name, email } = payment;
+  const { total, email, userName } = payment;
   const stripe = useStripe();
   const elements = useElements();
   // const [errors, setErrors] = useState("");
-  const [cardError, setCardError] = useState('');
-  const [success, setSuccess] = useState('');
+  // const [cardError, setCardError] = useState("");
+  // const [success, setSuccess] = useState("");
   const [processing, setProcessing] = useState(false);
-  const [transactionId, setTransactionId] = useState('');
+  const [transactionId, setTransactionId] = useState("");
   const [clientSecret, setClientSecret] = useState("");
   const Swal = require("sweetalert2");
   useEffect(() => {
@@ -43,13 +43,27 @@ const CheckoutForm = ({ payment }) => {
       return;
     }
 
-    const { error, paymentMethod } = await stripe.createPaymentMethod({
-      type: "card",
-      card,
-    });
+    const { paymentIntent, error: intentError } =
+      await stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: card,
+          billing_details: {
+            name: userName,
+            email: email,
+          },
+        },
+      });
 
-    // setErrors(error?.message || "");
-    if(error){
+    // setCardError(intentError?.message || "");
+    // setSuccess("");
+    // if (intentError) {
+    //   setCardError(intentError?.message);
+    // } else {
+    //   setCardError("");
+    //   setSuccess("sucess");
+    //
+
+    if (intentError) {
       const Toast = Swal.mixin({
         toast: true,
         position: "top-center",
@@ -60,9 +74,21 @@ const CheckoutForm = ({ payment }) => {
 
       Toast.fire({
         icon: "error",
-        title: error.message,
+        title: intentError?.message,
+      });
+    } else {
+      Swal.fire({
+        title: "Congrats",
+        text: "Pay successfull",
+        showCloseButton: true,
+        confirmButtonColor: "#3085d6",
+        confirmButtonText: "OK",
+        icon: "success",
+        width: "30em",
+        footer: `Transaction Id ${paymentIntent.id}`,
       });
     }
+
     // setSuccess('');
     // setProcessing(true);
     // // confirm card payment
@@ -137,7 +163,8 @@ const CheckoutForm = ({ payment }) => {
           Pay
         </button>
       </form>
-   
+      {/* {cardError && <p className="text-red-500">{cardError}</p>}
+      {success && <p className="text-green-500">{success}</p>} */}
     </>
   );
 };
